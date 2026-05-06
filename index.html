@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeFound - 黑客松与孵化器资源聚合</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0 20px;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .tab-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            border-left: 4px solid #667eea;
+        }
+        
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 20px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .card-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .card-meta span::before {
+            content: "📍";
+        }
+        
+        .card-meta span:nth-child(2)::before {
+            content: "📅";
+        }
+        
+        .card-meta span:nth-child(3)::before {
+            content: "👥";
+        }
+        
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .card a:hover {
+            text-decoration: underline;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+        
+        .search-box {
+            margin-bottom: 30px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 FreeFound</h1>
+        <p>免费找资源 - 黑客松与孵化器信息聚合平台</p>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="hackathon-count">-</h3>
+                <p>黑客松活动</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="incubator-count">-</h3>
+                <p>孵化器</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('hackathons')">🎯 黑客松</button>
+            <button class="tab-btn" onclick="showTab('incubators')">🏢 孵化器</button>
+        </div>
+        
+        <div class="content">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="🔍 搜索活动或孵化器..." onkeyup="filterItems()">
+            </div>
+            
+            <div id="hackathons-content">
+                <div class="loading">正在加载黑客松数据...</div>
+            </div>
+            
+            <div id="incubators-content" class="hidden">
+                <div class="loading">正在加载孵化器数据...</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>
+            <a href="https://github.com/AIPMAndy/FreeFound" target="_blank">GitHub</a> |
+            <a href="https://github.com/AIPMAndy/FreeFound/issues" target="_blank">反馈建议</a> |
+            <a href="https://github.com/AIPMAndy/FreeFound/blob/main/README.md" target="_blank">关于项目</a>
+        </p>
+        <p style="margin-top: 10px; opacity: 0.8;">
+            Made with ❤️ by FreeFound Community
+        </p>
+    </footer>
+    
+    <script>
+        let hackathonsData = [];
+        let incubatorsData = [];
+        let currentTab = 'hackathons';
+        
+        // 加载数据
+        async function loadData() {
+            try {
+                // 加载黑客松数据
+                const hackathonsResp = await fetch('data/hackathons.json');
+                hackathonsData = await hackathonsResp.json();
+                document.getElementById('hackathon-count').textContent = hackathonsData.length;
+                renderHackathons(hackathonsData);
+                
+                // 加载孵化器数据
+                const incubatorsResp = await fetch('data/incubators.json');
+                incubatorsData = await incubatorsResp.json();
+                document.getElementById('incubator-count').textContent = incubatorsData.length;
+                renderIncubators(incubatorsData);
+                
+            } catch (error) {
+                console.error('数据加载失败:', error);
+                document.getElementById('hackathons-content').innerHTML = '<p style="color: red;">数据加载失败，请刷新重试</p>';
+            }
+        }
+        
+        // 渲染黑客松列表
+        function renderHackathons(data) {
+            const container = document.getElementById('hackathons-content');
+            
+            if (data.length === 0) {
+                container.innerHTML = '<p>暂无数据</p>';
+                return;
+            }
+            
+            container.innerHTML = data.map(item => `
+                <div class="card" data-title="${item.title}" data-location="${item.location}">
+                    <h3>${item.title}</h3>
+                    <div class="card-meta">
+                        ${item.location ? `<span>${item.location}</span>` : ''}
+                        ${item.time ? `<span>${item.time}</span>` : ''}
+                        ${item.organizer ? `<span>${item.organizer}</span>` : ''}
+                    </div>
+                    <div>
+                        <span class="tag">${item.source}</span>
+                    </div>
+                    <a href="${item.link}" target="_blank">查看详情 →</a>
+                </div>
+            `).join('');
+        }
+        
+        // 渲染孵化器列表
+        function renderIncubators(data) {
+            const container = document.getElementById('incubators-content');
+            
+            if (data.length === 0) {
+                container.innerHTML = '<p>暂无数据</p>';
+                return;
+            }
+            
+            container.innerHTML = data.map(item => `
+                <div class="card" data-title="${item.name}" data-location="${item.location}">
+                    <h3>${item.name}</h3>
+                    <div class="card-meta">
+                        <span>${item.location}</span>
+                        <span>${item.type}</span>
+                        <span>${item.focus}</span>
+                    </div>
+                    <div>
+                        ${item.services ? item.services.map(s => `<span class="tag">${s}</span>`).join('') : ''}
+                    </div>
+                    ${item.website ? `<a href="${item.website}" target="_blank">访问官网 →</a>` : ''}
+                </div>
+            `).join('');
+        }
+        
+        // 切换标签
+        function showTab(tab) {
+            currentTab = tab;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 切换内容
+            if (tab === 'hackathons') {
+                document.getElementById('hackathons-content').classList.remove('hidden');
+                document.getElementById('incubators-content').classList.add('hidden');
+            } else {
+                document.getElementById('hackathons-content').classList.add('hidden');
+                document.getElementById('incubators-content').classList.remove('hidden');
+            }
+            
+            // 清空搜索
+            document.getElementById('search').value = '';
+            filterItems();
+        }
+        
+        // 搜索过滤
+        function filterItems() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const location = card.dataset.location.toLowerCase();
+                
+                if (title.includes(searchTerm) || location.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // 页面加载时获取数据
+        loadData();
+    </script>
+</body>
+</html>

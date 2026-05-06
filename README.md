@@ -2,7 +2,21 @@
 
 **免费找资源 - 黑客松与孵化器信息聚合平台**
 
+[![GitHub stars](https://img.shields.io/github/stars/AIPMAndy/FreeFound?style=social)](https://github.com/AIPMAndy/FreeFound)
+[![GitHub forks](https://img.shields.io/github/forks/AIPMAndy/FreeFound?style=social)](https://github.com/AIPMAndy/FreeFound/fork)
+[![GitHub issues](https://img.shields.io/github/issues/AIPMAndy/FreeFound)](https://github.com/AIPMAndy/FreeFound/issues)
+[![License](https://img.shields.io/github/license/AIPMAndy/FreeFound)](https://github.com/AIPMAndy/FreeFound/blob/main/LICENSE)
+
 自动收集和聚合全国黑客松活动、创业孵化器、投资资源信息的开源项目。
+
+## ✨ 特性
+
+- 🎯 **黑客松聚合** - 自动收集全国线上/线下黑客松活动
+- 🏢 **孵化器名录** - 整理北京及全国创业孵化器信息
+- 🤖 **自动更新** - GitHub Actions 每日自动更新数据
+- 🌐 **Web 界面** - 美观的网页展示和搜索功能
+- 🔌 **REST API** - 提供简单的 API 接口
+- 📊 **数据开放** - JSON 格式，易于使用和扩展
 
 ## 📊 当前数据
 
@@ -10,33 +24,75 @@
 - **孵化器**: 10+ 家（北京为主）
 - **数据来源**: 活动行、Devpost、36氪、公开信息
 
-## 🎯 项目目标
+## 🚀 快速开始
 
-1. **黑客松收集器**
-   - 全国线上/线下黑客松活动
-   - 自动监控新活动发布
-   - 报名信息、奖金、主题整理
+### 在线使用
 
-2. **孵化器收集器**
-   - 北京及全国孵化器名录
-   - 投资资源、申请条件
-   - 联系方式和服务内容
+**网页版**：[https://aipmAndy.github.io/FreeFound/](https://aipmAndy.github.io/FreeFound/)
 
-3. **AI Agent 自动化**（规划中）
-   - 自动报名符合条件的黑客松
-   - 智能筛选和推荐
-   - 自动生成项目提案
+**API 访问**：
+```bash
+# 获取黑客松列表
+curl https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/hackathons.json
 
-## 📁 数据结构
-
-```
-data/
-├── hackathons.json      # 黑客松活动数据
-└── incubators.json      # 孵化器数据
+# 获取孵化器列表
+curl https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/incubators.json
 ```
 
-### 黑客松数据格式
+### 本地使用
 
+```bash
+# 克隆项目
+git clone https://github.com/AIPMAndy/FreeFound.git
+cd FreeFound
+
+# 查看数据
+cat data/hackathons.json
+cat data/incubators.json
+
+# 启动 Web 界面
+python -m http.server 8000
+# 访问 http://localhost:8000
+
+# 启动 API 服务
+python api_server.py 8080
+# 访问 http://localhost:8080
+```
+
+### 运行数据收集器
+
+```bash
+# 安装依赖
+pip install requests beautifulsoup4
+
+# 运行收集器
+python collector.py
+```
+
+## 📁 项目结构
+
+```
+FreeFound/
+├── data/                      # 数据目录
+│   ├── hackathons.json       # 黑客松数据
+│   └── incubators.json       # 孵化器数据
+├── .github/
+│   └── workflows/
+│       └── update-data.yml   # 自动更新工作流
+├── index.html                # Web 界面
+├── collector.py              # 数据收集器
+├── api_server.py             # API 服务器
+├── README.md                 # 项目说明
+├── USAGE.md                  # 使用指南
+├── CONTRIBUTING.md           # 贡献指南
+└── .gitignore
+```
+
+## 📖 使用文档
+
+### 数据格式
+
+**黑客松数据**：
 ```json
 {
   "title": "活动名称",
@@ -48,8 +104,7 @@ data/
 }
 ```
 
-### 孵化器数据格式
-
+**孵化器数据**：
 ```json
 {
   "name": "孵化器名称",
@@ -64,63 +119,124 @@ data/
 }
 ```
 
-## 🚀 快速开始
+### API 接口
+
+启动 API 服务器后，可以使用以下接口：
 
 ```bash
-# 克隆项目
-git clone https://github.com/YOUR_USERNAME/FreeFound.git
-cd FreeFound
+# 获取所有黑客松
+GET http://localhost:8080/api/hackathons
 
-# 查看数据
-cat data/hackathons.json
-cat data/incubators.json
+# 按地点筛选
+GET http://localhost:8080/api/hackathons?location=北京
+
+# 按来源筛选
+GET http://localhost:8080/api/hackathons?source=活动行
+
+# 限制返回数量
+GET http://localhost:8080/api/hackathons?limit=10
+
+# 获取所有孵化器
+GET http://localhost:8080/api/incubators
+
+# 按地点筛选
+GET http://localhost:8080/api/incubators?location=北京
+
+# 按类型筛选
+GET http://localhost:8080/api/incubators?type=综合孵化器
+
+# 获取统计信息
+GET http://localhost:8080/api/stats
 ```
+
+详细文档请查看 [USAGE.md](USAGE.md)
+
+## 🤝 贡献指南
+
+我们欢迎任何形式的贡献！
+
+### 贡献方式
+
+1. **补充数据** - 添加新的黑客松或孵化器信息
+2. **改进代码** - 优化收集器、添加新数据源
+3. **完善文档** - 改进说明文档、添加使用案例
+4. **反馈建议** - 提交 Issue 或参与讨论
+
+### 快速贡献
+
+```bash
+# 1. Fork 项目
+# 2. 创建分支
+git checkout -b feature/your-feature
+
+# 3. 提交更改
+git commit -m "feat: 添加新功能"
+
+# 4. 推送分支
+git push origin feature/your-feature
+
+# 5. 创建 Pull Request
+```
+
+详细指南请查看 [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 📝 数据来源
 
 - [活动行](https://www.huodongxing.com/) - 国内活动平台
 - [Devpost](https://devpost.com/) - 国际黑客松平台
+- [SegmentFault](https://segmentfault.com/) - 思否技术社区
+- [掘金](https://juejin.cn/) - 技术社区
 - [36氪](https://www.36kr.com/) - 创投资讯
+- [IT桔子](https://www.itjuzi.com/) - 创投数据库
 - 各孵化器官网公开信息
-
-## 🤝 贡献指南
-
-欢迎提交 PR 补充更多数据！
-
-1. Fork 本项目
-2. 添加新的黑客松或孵化器信息到对应 JSON 文件
-3. 提交 Pull Request
-
-### 数据质量要求
-
-- 信息准确、来源可靠
-- 包含必要字段（名称、链接、时间/地点）
-- 注明数据来源
-
-## 📅 更新日志
-
-- **2026-05-06**: 项目初始化，收集首批数据
-  - 9个黑客松活动（活动行）
-  - 10家北京孵化器
 
 ## 🔮 未来计划
 
-- [ ] 自动化爬虫定期更新数据
+- [ ] 自动化爬虫定期更新数据 ✅
 - [ ] 添加更多数据源（掘金、CSDN、开源中国等）
-- [ ] 开发 Web 界面展示数据
+- [ ] 开发 Web 界面展示数据 ✅
+- [ ] 提供 REST API 接口 ✅
 - [ ] AI Agent 自动参与黑客松
 - [ ] 邮件/微信订阅新活动通知
 - [ ] 孵化器申请条件和成功案例
+- [ ] 移动端 App
+- [ ] 数据可视化分析
+- [ ] 社区论坛和交流
+
+## 📅 更新日志
+
+### v1.0.0 (2026-05-06)
+
+- ✨ 项目初始化
+- 📊 收集首批数据（9个黑客松，10家孵化器）
+- 🤖 实现自动化数据收集器
+- 🌐 开发 Web 展示界面
+- 🔌 提供 REST API 接口
+- 📚 完善项目文档
+- ⚙️ 配置 GitHub Actions 自动更新
 
 ## 📄 License
 
-MIT License
+[MIT License](LICENSE)
 
 ## 💬 联系方式
 
-- 提交 Issue: [GitHub Issues](https://github.com/YOUR_USERNAME/FreeFound/issues)
-- 讨论交流: [GitHub Discussions](https://github.com/YOUR_USERNAME/FreeFound/discussions)
+- **GitHub Issues**: [提交问题](https://github.com/AIPMAndy/FreeFound/issues)
+- **GitHub Discussions**: [参与讨论](https://github.com/AIPMAndy/FreeFound/discussions)
+- **Email**: 通过 GitHub Profile 联系维护者
+
+## 🌟 Star History
+
+如果这个项目对你有帮助，请给我们一个 Star ⭐️
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AIPMAndy/FreeFound&type=Date)](https://star-history.com/#AIPMAndy/FreeFound&Date)
+
+## 🙏 致谢
+
+感谢所有贡献者和支持者！
 
 ---
 
 **FreeFound** - 让创业资源触手可及 🚀
+
+Made with ❤️ by FreeFound Community

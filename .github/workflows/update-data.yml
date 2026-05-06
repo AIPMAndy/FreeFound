@@ -1,0 +1,48 @@
+name: 自动更新数据
+
+on:
+  schedule:
+    # 每天北京时间 9:00 (UTC 1:00) 自动运行
+    - cron: '0 1 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 设置 Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 安装依赖
+      run: |
+        pip install requests beautifulsoup4
+    
+    - name: 运行数据收集器
+      run: |
+        python collector.py
+    
+    - name: 检查是否有更新
+      id: check_changes
+      run: |
+        git diff --quiet data/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+    
+    - name: 提交更新
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add data/
+        git commit -m "🤖 自动更新数据 $(date +'%Y-%m-%d %H:%M:%S')"
+    
+    - name: 推送更改
+      if: steps.check_changes.outputs.has_changes == 'true'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
