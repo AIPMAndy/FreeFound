@@ -1,0 +1,112 @@
+[
+  {
+    "name": "中关村创业大街",
+    "location": "北京海淀",
+    "address": "北京市海淀区海淀大街",
+    "type": "综合孵化器",
+    "focus": "科技创业",
+    "website": "http://www.zgc-innoway.com/",
+    "contact": "",
+    "services": ["办公空间", "创业辅导", "投资对接", "政策申报"],
+    "source": "公开信息"
+  },
+  {
+    "name": "氪空间",
+    "location": "北京",
+    "address": "多个分布点",
+    "type": "联合办公+孵化器",
+    "focus": "互联网、科技",
+    "website": "https://www.krspace.cn/",
+    "contact": "",
+    "services": ["联合办公", "创业服务", "社群活动", "融资对接"],
+    "source": "36氪"
+  },
+  {
+    "name": "创新工场",
+    "location": "北京",
+    "address": "北京市海淀区",
+    "type": "投资+孵化",
+    "focus": "AI、教育、消费",
+    "website": "https://www.chuangxin.com/",
+    "contact": "",
+    "services": ["天使投资", "创业辅导", "技术支持", "商业资源"],
+    "source": "公开信息"
+  },
+  {
+    "name": "车库咖啡",
+    "location": "北京海淀",
+    "address": "北京市海淀区海淀西大街",
+    "type": "创业咖啡馆",
+    "focus": "互联网创业",
+    "website": "http://www.chekucafe.com/",
+    "contact": "",
+    "services": ["开放办公", "创业交流", "投资人对接", "活动路演"],
+    "source": "公开信息"
+  },
+  {
+    "name": "微软加速器",
+    "location": "北京",
+    "address": "北京市海淀区丹棱街",
+    "type": "企业加速器",
+    "focus": "云计算、AI、企业服务",
+    "website": "https://www.microsoftaccelerator.com/",
+    "contact": "",
+    "services": ["技术支持", "云资源", "导师辅导", "市场对接"],
+    "source": "公开信息"
+  },
+  {
+    "name": "腾讯众创空间",
+    "location": "北京、深圳等",
+    "address": "多个城市",
+    "type": "企业孵化器",
+    "focus": "互联网、文创、游戏",
+    "website": "https://maker.qq.com/",
+    "contact": "",
+    "services": ["办公空间", "腾讯资源", "投资对接", "流量扶持"],
+    "source": "公开信息"
+  },
+  {
+    "name": "清华科技园",
+    "location": "北京海淀",
+    "address": "北京市海淀区中关村东路",
+    "type": "大学科技园",
+    "focus": "高科技产业",
+    "website": "http://www.tuspark.com/",
+    "contact": "",
+    "services": ["产学研转化", "办公空间", "投资服务", "政策支持"],
+    "source": "公开信息"
+  },
+  {
+    "name": "北大科技园",
+    "location": "北京海淀",
+    "address": "北京市海淀区中关村北大街",
+    "type": "大学科技园",
+    "focus": "科技成果转化",
+    "website": "http://www.pku-sp.com/",
+    "contact": "",
+    "services": ["孵化服务", "投资对接", "技术转移", "人才培养"],
+    "source": "公开信息"
+  },
+  {
+    "name": "优客工场",
+    "location": "全国多地",
+    "address": "北京、上海、深圳等",
+    "type": "联合办公",
+    "focus": "创业服务",
+    "website": "https://www.ucommune.com/",
+    "contact": "",
+    "services": ["联合办公", "企业服务", "社群活动", "资源对接"],
+    "source": "公开信息"
+  },
+  {
+    "name": "洪泰创新空间",
+    "location": "北京",
+    "address": "北京市朝阳区",
+    "type": "投资+孵化",
+    "focus": "科技创新",
+    "website": "http://www.hongtaispace.com/",
+    "contact": "",
+    "services": ["天使投资", "创业辅导", "办公空间", "资源对接"],
+    "source": "公开信息"
+  }
+]
