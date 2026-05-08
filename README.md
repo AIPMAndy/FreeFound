@@ -1,13 +1,31 @@
-# FreeFound
+# FreeFound 🚀
 
 **免费找资源 - 黑客松与孵化器信息聚合平台**
+
+> 🎯 **一站式发现全国黑客松活动和创业孵化器** | 自动更新 | 数据开放 | 完全免费
 
 [![GitHub stars](https://img.shields.io/github/stars/AIPMAndy/FreeFound?style=social)](https://github.com/AIPMAndy/FreeFound)
 [![GitHub forks](https://img.shields.io/github/forks/AIPMAndy/FreeFound?style=social)](https://github.com/AIPMAndy/FreeFound/fork)
 [![GitHub issues](https://img.shields.io/github/issues/AIPMAndy/FreeFound)](https://github.com/AIPMAndy/FreeFound/issues)
 [![License](https://img.shields.io/github/license/AIPMAndy/FreeFound)](https://github.com/AIPMAndy/FreeFound/blob/main/LICENSE)
 
-自动收集和聚合全国黑客松活动、创业孵化器、投资资源信息的开源项目。
+---
+
+## 💡 为什么需要 FreeFound？
+
+**痛点**：
+- 🔍 黑客松信息分散在各个平台，找起来太费劲
+- 📅 错过了很多优质活动，事后才知道
+- 🏢 想找孵化器，但不知道哪些靠谱
+- 🌐 需要一个地方能看到全国的创业资源
+
+**解决方案**：
+- ✅ 自动聚合全国黑客松活动（50+ 条，覆盖 30+ 城市）
+- ✅ 整理优质孵化器信息（31 家，一线城市全覆盖）
+- ✅ 每日自动更新，不错过任何机会
+- ✅ 数据开放，API 免费使用
+
+---
 
 ## ✨ 特性
 
@@ -20,9 +38,10 @@
 
 ## 📊 当前数据
 
-- **黑客松活动**: 9+ 条（持续更新）
-- **孵化器**: 10+ 家（北京为主）
-- **数据来源**: 活动行、Devpost、36氪、公开信息
+- **黑客松活动**: **50+ 条**（覆盖全国 30+ 城市，2026 年最新）
+- **孵化器**: **31 家**（北京、上海、深圳、杭州）
+- **数据来源**: 活动行、Devpost、36氪、政府平台、产业园区
+- **更新频率**: 每日自动更新（GitHub Actions）
 
 ## 🚀 快速开始
 

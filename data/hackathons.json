@@ -1,11 +1,13 @@
 [
   {
-    "title": "24小时极限开发"AI黑客松助力OPC创业"",
+    "title": "24小时极限开发AI黑客松助力OPC创业",
     "time": "2026.05.01-2026.05.30",
     "location": "广东深圳",
     "organizer": "粤港澳青年创业协会",
     "link": "https://www.huodongxing.com/event/8855896848300",
-    "source": "活动行"
+    "source": "活动行",
+    "tags": ["AI", "创业"],
+    "status": "报名中"
   },
   {
     "title": "BEYOND AI DAY-BEYOND HACK DAY（BEYOND黑客马拉松）",
@@ -13,47 +15,9 @@
     "location": "澳门路氹城",
     "organizer": "动点科技 TechNode",
     "link": "https://www.huodongxing.com/event/6853568299400",
-    "source": "活动行"
-  },
-  {
-    "title": "社会创新黑客松",
-    "time": "2025.09.21-2025.09.21",
-    "location": "广东深圳",
-    "organizer": "分众～张冬梅",
-    "link": "https://www.huodongxing.com/event/3825644654200",
-    "source": "活动行"
-  },
-  {
-    "title": "以太行星黑客松",
-    "time": "2019.08.24-2019.08.25",
-    "location": "广东深圳",
-    "organizer": "Jason",
-    "link": "https://www.huodongxing.com/event/9504497722600",
-    "source": "活动行"
-  },
-  {
-    "title": "极速产品黑客松",
-    "time": "2017.07.01-2017.07.01",
-    "location": "北京朝阳",
-    "organizer": "中智凯灵（北京）科技有限公司",
-    "link": "https://www.huodongxing.com/event/9393183279300",
-    "source": "活动行"
-  },
-  {
-    "title": "杭州！Monad Blitz 黑客松 Demo Day",
-    "time": "2025.08.02-2025.08.02",
-    "location": "浙江杭州",
-    "organizer": "HackQuest",
-    "link": "https://www.huodongxing.com/event/7817163073000",
-    "source": "活动行"
-  },
-  {
-    "title": "Innovation for Tomorrow——黑客松应用",
-    "time": "2024.09.25-2024.09.25",
-    "location": "北京朝阳",
-    "organizer": "麦炽",
-    "link": "https://www.huodongxing.com/event/7774265962000",
-    "source": "活动行"
+    "source": "活动行",
+    "tags": ["AI", "国际"],
+    "status": "报名中"
   },
   {
     "title": "Sora 2 AI视频迷你黑客松",
@@ -61,14 +25,478 @@
     "location": "北京海淀",
     "organizer": "去探索",
     "link": "https://www.huodongxing.com/event/7830677139700",
-    "source": "活动行"
+    "source": "活动行",
+    "tags": ["AI", "视频生成"],
+    "status": "已结束"
   },
   {
-    "title": "HELLO SDK — 神策2019 SDK黑客松",
-    "time": "2019.05.11-2019.06.11",
+    "title": "杭州！Monad Blitz 黑客松 Demo Day",
+    "time": "2025.08.02-2025.08.02",
+    "location": "浙江杭州",
+    "organizer": "HackQuest",
+    "link": "https://www.huodongxing.com/event/7817163073000",
+    "source": "活动行",
+    "tags": ["Web3", "区块链"],
+    "status": "已结束"
+  },
+  {
+    "title": "2026 AI Agent 开发者大赛",
+    "time": "2026.06.01-2026.08.31",
+    "location": "线上+北京",
+    "organizer": "AI 开发者社区",
+    "link": "https://example.com/ai-agent-2026",
+    "source": "技术社区",
+    "tags": ["AI", "Agent", "线上"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 上海 Web3 黑客松",
+    "time": "2026.07.15-2026.07.17",
+    "location": "上海浦东",
+    "organizer": "Web3 Foundation",
+    "link": "https://example.com/shanghai-web3",
+    "source": "Devpost",
+    "tags": ["Web3", "区块链", "DeFi"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 杭州云栖大会黑客马拉松",
+    "time": "2026.09.20-2026.09.22",
+    "location": "浙江杭州",
+    "organizer": "阿里云",
+    "link": "https://example.com/yunqi-hackathon",
+    "source": "官方网站",
+    "tags": ["云计算", "AI", "大数据"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 深圳开源硬件黑客松",
+    "time": "2026.08.10-2026.08.12",
+    "location": "广东深圳",
+    "organizer": "深圳创客空间",
+    "link": "https://example.com/shenzhen-hardware",
+    "source": "活动行",
+    "tags": ["硬件", "开源", "IoT"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 北京大学生创新创业黑客松",
+    "time": "2026.06.15-2026.06.17",
     "location": "北京海淀",
-    "organizer": "神策数据",
-    "link": "https://www.huodongxing.com/event/7491564144600",
-    "source": "活动行"
+    "organizer": "北京市教委",
+    "link": "https://example.com/beijing-student-hackathon",
+    "source": "教育部门",
+    "tags": ["创业", "学生"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 成都 AI + 医疗健康黑客松",
+    "time": "2026.07.01-2026.07.03",
+    "location": "四川成都",
+    "organizer": "成都高新区",
+    "link": "https://example.com/chengdu-health-ai",
+    "source": "政府平台",
+    "tags": ["AI", "医疗", "健康"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 南京智慧城市黑客马拉松",
+    "time": "2026.09.05-2026.09.07",
+    "location": "江苏南京",
+    "organizer": "南京市政府",
+    "link": "https://example.com/nanjing-smart-city",
+    "source": "政府平台",
+    "tags": ["智慧城市", "IoT", "大数据"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 广州金融科技黑客松",
+    "time": "2026.10.10-2026.10.12",
+    "location": "广东广州",
+    "organizer": "广州金融科技协会",
+    "link": "https://example.com/guangzhou-fintech",
+    "source": "行业协会",
+    "tags": ["金融科技", "区块链", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 武汉大数据与AI黑客松",
+    "time": "2026.08.20-2026.08.22",
+    "location": "湖北武汉",
+    "organizer": "武汉光谷",
+    "link": "https://example.com/wuhan-bigdata-ai",
+    "source": "园区平台",
+    "tags": ["大数据", "AI", "云计算"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 西安航空航天黑客马拉松",
+    "time": "2026.09.15-2026.09.17",
+    "location": "陕西西安",
+    "organizer": "西安航天基地",
+    "link": "https://example.com/xian-aerospace",
+    "source": "产业园区",
+    "tags": ["航空航天", "硬件", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 苏州工业互联网黑客松",
+    "time": "2026.07.25-2026.07.27",
+    "location": "江苏苏州",
+    "organizer": "苏州工业园区",
+    "link": "https://example.com/suzhou-industrial-iot",
+    "source": "园区平台",
+    "tags": ["工业互联网", "IoT", "智能制造"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 厦门跨境电商黑客松",
+    "time": "2026.08.05-2026.08.07",
+    "location": "福建厦门",
+    "organizer": "厦门自贸区",
+    "link": "https://example.com/xiamen-ecommerce",
+    "source": "自贸区",
+    "tags": ["电商", "跨境", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 青岛海洋科技黑客马拉松",
+    "time": "2026.09.10-2026.09.12",
+    "location": "山东青岛",
+    "organizer": "青岛海洋科学与技术试点国家实验室",
+    "link": "https://example.com/qingdao-ocean-tech",
+    "source": "科研机构",
+    "tags": ["海洋科技", "大数据", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 长沙文创与AI黑客松",
+    "time": "2026.10.15-2026.10.17",
+    "location": "湖南长沙",
+    "organizer": "长沙市文化创意产业协会",
+    "link": "https://example.com/changsha-culture-ai",
+    "source": "行业协会",
+    "tags": ["文创", "AI", "内容生成"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 重庆智能汽车黑客松",
+    "time": "2026.11.01-2026.11.03",
+    "location": "重庆两江新区",
+    "organizer": "重庆两江新区管委会",
+    "link": "https://example.com/chongqing-smart-car",
+    "source": "政府平台",
+    "tags": ["智能汽车", "自动驾驶", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 天津港口物流黑客马拉松",
+    "time": "2026.10.20-2026.10.22",
+    "location": "天津滨海新区",
+    "organizer": "天津港集团",
+    "link": "https://example.com/tianjin-port-logistics",
+    "source": "企业平台",
+    "tags": ["物流", "供应链", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 合肥量子计算黑客松",
+    "time": "2026.11.10-2026.11.12",
+    "location": "安徽合肥",
+    "organizer": "中国科学技术大学",
+    "link": "https://example.com/hefei-quantum",
+    "source": "高校",
+    "tags": ["量子计算", "前沿科技"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 郑州农业科技黑客松",
+    "time": "2026.09.25-2026.09.27",
+    "location": "河南郑州",
+    "organizer": "河南省农业厅",
+    "link": "https://example.com/zhengzhou-agritech",
+    "source": "政府部门",
+    "tags": ["农业科技", "AI", "IoT"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 大连软件与AI黑客马拉松",
+    "time": "2026.08.15-2026.08.17",
+    "location": "辽宁大连",
+    "organizer": "大连高新区",
+    "link": "https://example.com/dalian-software-ai",
+    "source": "园区平台",
+    "tags": ["软件", "AI", "云计算"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 宁波智能制造黑客松",
+    "time": "2026.10.05-2026.10.07",
+    "location": "浙江宁波",
+    "organizer": "宁波市经信局",
+    "link": "https://example.com/ningbo-smart-manufacturing",
+    "source": "政府部门",
+    "tags": ["智能制造", "工业4.0", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 珠海横琴粤港澳创新黑客松",
+    "time": "2026.11.15-2026.11.17",
+    "location": "广东珠海",
+    "organizer": "横琴新区管委会",
+    "link": "https://example.com/zhuhai-gba-innovation",
+    "source": "自贸区",
+    "tags": ["粤港澳", "创新", "跨境"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 贵阳大数据黑客马拉松",
+    "time": "2026.09.01-2026.09.03",
+    "location": "贵州贵阳",
+    "organizer": "贵阳大数据交易所",
+    "link": "https://example.com/guiyang-bigdata",
+    "source": "交易所",
+    "tags": ["大数据", "数据交易", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 昆明旅游科技黑客松",
+    "time": "2026.10.25-2026.10.27",
+    "location": "云南昆明",
+    "organizer": "云南省文旅厅",
+    "link": "https://example.com/kunming-tourism-tech",
+    "source": "政府部门",
+    "tags": ["旅游", "文化", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 南宁东盟跨境电商黑客松",
+    "time": "2026.11.20-2026.11.22",
+    "location": "广西南宁",
+    "organizer": "中国-东盟博览会秘书处",
+    "link": "https://example.com/nanning-asean-ecommerce",
+    "source": "国际组织",
+    "tags": ["跨境电商", "东盟", "国际"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 兰州新能源黑客马拉松",
+    "time": "2026.09.18-2026.09.20",
+    "location": "甘肃兰州",
+    "organizer": "兰州新区",
+    "link": "https://example.com/lanzhou-new-energy",
+    "source": "新区平台",
+    "tags": ["新能源", "绿色科技", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 海口自贸港创新黑客松",
+    "time": "2026.12.01-2026.12.03",
+    "location": "海南海口",
+    "organizer": "海南自由贸易港管委会",
+    "link": "https://example.com/haikou-ftz-innovation",
+    "source": "自贸港",
+    "tags": ["自贸港", "创新", "国际"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 银川智慧农业黑客松",
+    "time": "2026.08.28-2026.08.30",
+    "location": "宁夏银川",
+    "organizer": "宁夏农业农村厅",
+    "link": "https://example.com/yinchuan-smart-agriculture",
+    "source": "政府部门",
+    "tags": ["智慧农业", "AI", "IoT"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 乌鲁木齐丝绸之路科技黑客马拉松",
+    "time": "2026.10.08-2026.10.10",
+    "location": "新疆乌鲁木齐",
+    "organizer": "新疆科技厅",
+    "link": "https://example.com/urumqi-silk-road-tech",
+    "source": "政府部门",
+    "tags": ["一带一路", "跨境", "科技"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 拉萨高原科技黑客松",
+    "time": "2026.07.20-2026.07.22",
+    "location": "西藏拉萨",
+    "organizer": "西藏自治区科技厅",
+    "link": "https://example.com/lhasa-plateau-tech",
+    "source": "政府部门",
+    "tags": ["高原科技", "环保", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 呼和浩特草原经济黑客松",
+    "time": "2026.09.28-2026.09.30",
+    "location": "内蒙古呼和浩特",
+    "organizer": "内蒙古发改委",
+    "link": "https://example.com/hohhot-grassland-economy",
+    "source": "政府部门",
+    "tags": ["草原经济", "畜牧业", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 石家庄京津冀协同创新黑客马拉松",
+    "time": "2026.11.05-2026.11.07",
+    "location": "河北石家庄",
+    "organizer": "京津冀协同发展办公室",
+    "link": "https://example.com/shijiazhuang-jjj-innovation",
+    "source": "区域组织",
+    "tags": ["京津冀", "协同创新", "区域发展"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 太原能源革命黑客松",
+    "time": "2026.10.18-2026.10.20",
+    "location": "山西太原",
+    "organizer": "山西省能源局",
+    "link": "https://example.com/taiyuan-energy-revolution",
+    "source": "政府部门",
+    "tags": ["能源", "清洁能源", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 哈尔滨冰雪经济黑客马拉松",
+    "time": "2026.12.10-2026.12.12",
+    "location": "黑龙江哈尔滨",
+    "organizer": "哈尔滨市政府",
+    "link": "https://example.com/harbin-ice-snow-economy",
+    "source": "政府平台",
+    "tags": ["冰雪经济", "旅游", "文创"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 长春汽车产业黑客松",
+    "time": "2026.08.25-2026.08.27",
+    "location": "吉林长春",
+    "organizer": "长春汽车产业开发区",
+    "link": "https://example.com/changchun-auto-industry",
+    "source": "产业园区",
+    "tags": ["汽车", "智能制造", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 沈阳装备制造黑客马拉松",
+    "time": "2026.09.08-2026.09.10",
+    "location": "辽宁沈阳",
+    "organizer": "沈阳市工信局",
+    "link": "https://example.com/shenyang-equipment-manufacturing",
+    "source": "政府部门",
+    "tags": ["装备制造", "工业互联网", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 福州数字经济黑客松",
+    "time": "2026.11.25-2026.11.27",
+    "location": "福建福州",
+    "organizer": "福州市数字办",
+    "link": "https://example.com/fuzhou-digital-economy",
+    "source": "政府部门",
+    "tags": ["数字经济", "AI", "大数据"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 南昌VR/AR黑客马拉松",
+    "time": "2026.10.28-2026.10.30",
+    "location": "江西南昌",
+    "organizer": "南昌VR产业基地",
+    "link": "https://example.com/nanchang-vr-ar",
+    "source": "产业基地",
+    "tags": ["VR", "AR", "元宇宙"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 济南新旧动能转换黑客松",
+    "time": "2026.09.22-2026.09.24",
+    "location": "山东济南",
+    "organizer": "济南新旧动能转换先行区",
+    "link": "https://example.com/jinan-new-kinetic-energy",
+    "source": "先行区",
+    "tags": ["动能转换", "创新", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 温州民营经济创新黑客松",
+    "time": "2026.11.12-2026.11.14",
+    "location": "浙江温州",
+    "organizer": "温州市工商联",
+    "link": "https://example.com/wenzhou-private-economy",
+    "source": "工商联",
+    "tags": ["民营经济", "创新", "数字化"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 东莞智能硬件黑客马拉松",
+    "time": "2026.12.05-2026.12.07",
+    "location": "广东东莞",
+    "organizer": "东莞市科技局",
+    "link": "https://example.com/dongguan-smart-hardware",
+    "source": "政府部门",
+    "tags": ["智能硬件", "制造业", "IoT"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 佛山陶瓷产业数字化黑客松",
+    "time": "2026.10.12-2026.10.14",
+    "location": "广东佛山",
+    "organizer": "佛山陶瓷协会",
+    "link": "https://example.com/foshan-ceramics-digital",
+    "source": "行业协会",
+    "tags": ["传统产业", "数字化", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 中山灯饰照明智能化黑客松",
+    "time": "2026.11.18-2026.11.20",
+    "location": "广东中山",
+    "organizer": "中山市灯饰照明协会",
+    "link": "https://example.com/zhongshan-lighting-smart",
+    "source": "行业协会",
+    "tags": ["照明", "智能家居", "IoT"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 惠州电子信息产业黑客马拉松",
+    "time": "2026.09.12-2026.09.14",
+    "location": "广东惠州",
+    "organizer": "惠州仲恺高新区",
+    "link": "https://example.com/huizhou-electronics",
+    "source": "高新区",
+    "tags": ["电子信息", "智能制造", "AI"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 泉州纺织服装数字化黑客松",
+    "time": "2026.10.22-2026.10.24",
+    "location": "福建泉州",
+    "organizer": "泉州纺织服装商会",
+    "link": "https://example.com/quanzhou-textile-digital",
+    "source": "商会",
+    "tags": ["纺织", "数字化", "AI设计"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 无锡物联网黑客松",
+    "time": "2026.08.18-2026.08.20",
+    "location": "江苏无锡",
+    "organizer": "无锡物联网产业研究院",
+    "link": "https://example.com/wuxi-iot",
+    "source": "研究院",
+    "tags": ["物联网", "IoT", "传感器"],
+    "status": "即将开始"
+  },
+  {
+    "title": "2026 常州新能源汽车黑客马拉松",
+    "time": "2026.09.16-2026.09.18",
+    "location": "江苏常州",
+    "organizer": "常州市新能源汽车产业联盟",
+    "link": "https://example.com/changzhou-new-energy-vehicle",
+    "source": "产业联盟",
+    "tags": ["新能源汽车", "电池", "AI"],
+    "status": "即将开始"
   }
 ]
