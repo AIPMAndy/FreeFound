@@ -1,5 +1,39 @@
 [
   {
+    "title": "Build, Ship, Shape: Amazon Developer Hackathon",
+    "time": "2026.08.31-2026.10.23",
+    "location": "线上 · 全球符合资格地区",
+    "organizer": "Amazon Developer",
+    "link": "https://amazonappdev2026.devpost.com/",
+    "source": "Amazon Developer / Devpost 官方页面",
+    "tags": [
+      "AI",
+      "开发者",
+      "线上"
+    ],
+    "verified_at": "2026-10-22",
+    "verification_status": "核对官方活动页及规则",
+    "deadline": "2026-10-23 12:00 PDT",
+    "eligibility": "须达到所在地法定成年年龄；不同地区与项目类别有资格限制，须看官方 Rules。"
+  },
+  {
+    "title": "Meta VR Start Developer Competition 2026",
+    "time": "2026.09.24-2026.11.18",
+    "location": "线上 · 部分地区限制",
+    "organizer": "Meta",
+    "link": "https://start-developer-competition-26.devpost.com/",
+    "source": "Meta / Devpost 官方页面",
+    "tags": [
+      "AR/VR",
+      "开发者",
+      "线上"
+    ],
+    "verified_at": "2026-10-22",
+    "verification_status": "核对官方活动页及规则",
+    "deadline": "2026-11-18 12:00 PST",
+    "eligibility": "仅符合条件的 Meta VR Start 项目成员可参赛，并有账户、年龄与地区限制。"
+  },
+  {
     "title": "24小时极限开发AI黑客松助力OPC创业",
     "time": "2026.05.01-2026.05.30",
     "location": "广东深圳",

@@ -79,7 +79,7 @@ function record(x){var item=el("article","item"),main=el("div","item-main"),head
 var name=x.title||x.name||"未命名资源";head.appendChild(el("h3","",name));var flag=active==="hackathons"?state(x):active==="incubators"?"待核验":x.category||"资源";
 head.appendChild(el("span","pill "+(active==="hackathons"?"amber":active==="resources"?"blue":""),flag));main.appendChild(head);
 if(x.description)main.appendChild(el("p","",x.description));
-if(active==="hackathons"){main.appendChild(el("p","", [x.time||"时间未提供",x.location||"地区未提供"].join(" · ")));main.appendChild(el("p","meta","来源："+(x.source||"未知")+" · 原始链接需自行核验报名条件"))}
+if(active==="hackathons"){main.appendChild(el("p","", [x.time||"时间未提供",x.location||"地区未提供"].join(" · ")));main.appendChild(el("p","meta","来源："+(x.source||"未知")+(x.verified_at?" · 最近人工核验："+x.verified_at:" · 来源尚待人工复核")));if(x.deadline)main.appendChild(el("p","", "官方截止："+x.deadline+"（以主办方更新为准）"));if(x.eligibility)main.appendChild(el("p","", "资格限制："+x.eligibility))}
 if(active==="incubators"){main.appendChild(el("p","",[x.location||"地点待核",x.type||"类型待核",x.focus||""].filter(Boolean).join(" · ")));main.appendChild(el("p","meta","机构及服务状态未独立核验，请在官网确认地址、资格及申请开放情况"))}
 if(active==="resources")main.appendChild(el("p","meta","平台入口 · 具体活动/服务规则请以来源网站为准"));
 item.appendChild(main);var url=safeLink(x.url||x.link||x.website);
