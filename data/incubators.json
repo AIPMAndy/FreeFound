@@ -7,8 +7,14 @@
     "focus": "科技创业",
     "website": "http://www.zgc-innoway.com/",
     "contact": "",
-    "services": ["办公空间", "创业辅导", "投资对接", "政策申报"],
-    "source": "公开信息"
+    "services": [
+      "办公空间",
+      "创业辅导",
+      "投资对接",
+      "政策申报"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "氪空间",
@@ -18,8 +24,14 @@
     "focus": "互联网、科技",
     "website": "https://www.krspace.cn/",
     "contact": "",
-    "services": ["联合办公", "创业服务", "社群活动", "融资对接"],
-    "source": "36氪"
+    "services": [
+      "联合办公",
+      "创业服务",
+      "社群活动",
+      "融资对接"
+    ],
+    "source": "36氪",
+    "verification_status": "待人工复核"
   },
   {
     "name": "创新工场",
@@ -29,8 +41,14 @@
     "focus": "AI、教育、消费",
     "website": "https://www.chuangxin.com/",
     "contact": "",
-    "services": ["天使投资", "创业辅导", "技术支持", "商业资源"],
-    "source": "公开信息"
+    "services": [
+      "天使投资",
+      "创业辅导",
+      "技术支持",
+      "商业资源"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "车库咖啡",
@@ -40,8 +58,14 @@
     "focus": "互联网创业",
     "website": "http://www.chekucafe.com/",
     "contact": "",
-    "services": ["开放办公", "创业交流", "投资人对接", "活动路演"],
-    "source": "公开信息"
+    "services": [
+      "开放办公",
+      "创业交流",
+      "投资人对接",
+      "活动路演"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "微软加速器",
@@ -51,8 +75,14 @@
     "focus": "云计算、AI、企业服务",
     "website": "https://www.microsoftaccelerator.com/",
     "contact": "",
-    "services": ["技术支持", "云资源", "导师辅导", "市场对接"],
-    "source": "公开信息"
+    "services": [
+      "技术支持",
+      "云资源",
+      "导师辅导",
+      "市场对接"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "腾讯众创空间",
@@ -62,8 +92,14 @@
     "focus": "互联网、文创、游戏",
     "website": "https://maker.qq.com/",
     "contact": "",
-    "services": ["办公空间", "腾讯资源", "投资对接", "流量扶持"],
-    "source": "公开信息"
+    "services": [
+      "办公空间",
+      "腾讯资源",
+      "投资对接",
+      "流量扶持"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "清华科技园",
@@ -73,8 +109,14 @@
     "focus": "高科技产业",
     "website": "http://www.tuspark.com/",
     "contact": "",
-    "services": ["产学研转化", "办公空间", "投资服务", "政策支持"],
-    "source": "公开信息"
+    "services": [
+      "产学研转化",
+      "办公空间",
+      "投资服务",
+      "政策支持"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "北大科技园",
@@ -84,8 +126,14 @@
     "focus": "科技成果转化",
     "website": "http://www.pku-sp.com/",
     "contact": "",
-    "services": ["孵化服务", "投资对接", "技术转移", "人才培养"],
-    "source": "公开信息"
+    "services": [
+      "孵化服务",
+      "投资对接",
+      "技术转移",
+      "人才培养"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "优客工场",
@@ -95,8 +143,14 @@
     "focus": "创业服务",
     "website": "https://www.ucommune.com/",
     "contact": "",
-    "services": ["联合办公", "企业服务", "社群活动", "资源对接"],
-    "source": "公开信息"
+    "services": [
+      "联合办公",
+      "企业服务",
+      "社群活动",
+      "资源对接"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "洪泰创新空间",
@@ -106,8 +160,14 @@
     "focus": "科技创新",
     "website": "http://www.hongtaispace.com/",
     "contact": "",
-    "services": ["天使投资", "创业辅导", "办公空间", "资源对接"],
-    "source": "公开信息"
+    "services": [
+      "天使投资",
+      "创业辅导",
+      "办公空间",
+      "资源对接"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "张江高科技园区",
@@ -117,8 +177,14 @@
     "focus": "集成电路、生物医药、AI",
     "website": "http://www.zjpark.com/",
     "contact": "",
-    "services": ["产业集群", "政策支持", "投资对接", "人才服务"],
-    "source": "公开信息"
+    "services": [
+      "产业集群",
+      "政策支持",
+      "投资对接",
+      "人才服务"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "杨浦创业园",
@@ -128,8 +194,14 @@
     "focus": "互联网、文创",
     "website": "http://www.ypmaker.com/",
     "contact": "",
-    "services": ["办公空间", "创业辅导", "投资对接", "政策申报"],
-    "source": "公开信息"
+    "services": [
+      "办公空间",
+      "创业辅导",
+      "投资对接",
+      "政策申报"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "漕河泾开发区",
@@ -139,8 +211,14 @@
     "focus": "电子信息、新材料",
     "website": "http://www.caohejing.com/",
     "contact": "",
-    "services": ["产业园区", "政策支持", "配套服务", "人才引进"],
-    "source": "公开信息"
+    "services": [
+      "产业园区",
+      "政策支持",
+      "配套服务",
+      "人才引进"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "上海交大科技园",
@@ -150,8 +228,14 @@
     "focus": "科技成果转化",
     "website": "http://www.sjtusp.com/",
     "contact": "",
-    "services": ["孵化服务", "技术转移", "投资对接", "产学研合作"],
-    "source": "公开信息"
+    "services": [
+      "孵化服务",
+      "技术转移",
+      "投资对接",
+      "产学研合作"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "复旦科技园",
@@ -161,8 +245,14 @@
     "focus": "生物医药、信息技术",
     "website": "http://www.fdstp.com/",
     "contact": "",
-    "services": ["孵化器", "加速器", "投资服务", "技术转移"],
-    "source": "公开信息"
+    "services": [
+      "孵化器",
+      "加速器",
+      "投资服务",
+      "技术转移"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "WeWork中国",
@@ -172,8 +262,14 @@
     "focus": "创业服务",
     "website": "https://www.wework.cn/",
     "contact": "",
-    "services": ["联合办公", "社群活动", "企业服务", "全球网络"],
-    "source": "公开信息"
+    "services": [
+      "联合办公",
+      "社群活动",
+      "企业服务",
+      "全球网络"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "上海科技企业孵化器",
@@ -183,8 +279,14 @@
     "focus": "科技创业",
     "website": "http://www.shincubator.com/",
     "contact": "",
-    "services": ["孵化服务", "政策支持", "投资对接", "培训辅导"],
-    "source": "公开信息"
+    "services": [
+      "孵化服务",
+      "政策支持",
+      "投资对接",
+      "培训辅导"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "InnoSpace+",
@@ -194,8 +296,14 @@
     "focus": "硬件、智能制造",
     "website": "http://www.innospaceplus.com/",
     "contact": "",
-    "services": ["硬件孵化", "供应链对接", "投资服务", "导师辅导"],
-    "source": "公开信息"
+    "services": [
+      "硬件孵化",
+      "供应链对接",
+      "投资服务",
+      "导师辅导"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "上海国际创客中心",
@@ -205,8 +313,14 @@
     "focus": "硬件创新",
     "website": "http://www.xnode.com/",
     "contact": "",
-    "services": ["创客空间", "硬件加速", "国际资源", "活动路演"],
-    "source": "公开信息"
+    "services": [
+      "创客空间",
+      "硬件加速",
+      "国际资源",
+      "活动路演"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "Plug and Play中国",
@@ -216,8 +330,14 @@
     "focus": "科技创新",
     "website": "https://www.pnpchina.com/",
     "contact": "",
-    "services": ["加速服务", "企业对接", "投资服务", "全球网络"],
-    "source": "公开信息"
+    "services": [
+      "加速服务",
+      "企业对接",
+      "投资服务",
+      "全球网络"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "南山科技园",
@@ -227,8 +347,14 @@
     "focus": "互联网、通信、AI",
     "website": "http://www.nsstp.com/",
     "contact": "",
-    "services": ["产业集群", "政策支持", "人才服务", "配套设施"],
-    "source": "公开信息"
+    "services": [
+      "产业集群",
+      "政策支持",
+      "人才服务",
+      "配套设施"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "深圳湾创业广场",
@@ -238,8 +364,14 @@
     "focus": "科技创业",
     "website": "http://www.szbayarea.com/",
     "contact": "",
-    "services": ["办公空间", "创业辅导", "投资对接", "活动路演"],
-    "source": "公开信息"
+    "services": [
+      "办公空间",
+      "创业辅导",
+      "投资对接",
+      "活动路演"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "华强北国际创客中心",
@@ -249,8 +381,14 @@
     "focus": "硬件创新",
     "website": "http://www.hqbmaker.com/",
     "contact": "",
-    "services": ["创客空间", "供应链资源", "硬件加速", "技术支持"],
-    "source": "公开信息"
+    "services": [
+      "创客空间",
+      "供应链资源",
+      "硬件加速",
+      "技术支持"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "前海深港青年梦工场",
@@ -260,8 +398,14 @@
     "focus": "深港合作",
     "website": "http://www.dreamfactory.com.cn/",
     "contact": "",
-    "services": ["港澳台创业", "政策支持", "跨境服务", "投资对接"],
-    "source": "公开信息"
+    "services": [
+      "港澳台创业",
+      "政策支持",
+      "跨境服务",
+      "投资对接"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "深圳湾科技生态园",
@@ -271,8 +415,14 @@
     "focus": "AI、生物医药",
     "website": "http://www.szbayeco.com/",
     "contact": "",
-    "services": ["产业园区", "研发平台", "投资服务", "人才公寓"],
-    "source": "公开信息"
+    "services": [
+      "产业园区",
+      "研发平台",
+      "投资服务",
+      "人才公寓"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "梦想加空间",
@@ -282,8 +432,14 @@
     "focus": "智能办公",
     "website": "https://www.mydreamplus.com/",
     "contact": "",
-    "services": ["智能办公", "企业服务", "社群活动", "灵活租赁"],
-    "source": "公开信息"
+    "services": [
+      "智能办公",
+      "企业服务",
+      "社群活动",
+      "灵活租赁"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "梦工场",
@@ -293,8 +449,14 @@
     "focus": "互联网、电商",
     "website": "http://www.hzdreamfactory.com/",
     "contact": "",
-    "services": ["办公空间", "创业辅导", "投资对接", "政策支持"],
-    "source": "公开信息"
+    "services": [
+      "办公空间",
+      "创业辅导",
+      "投资对接",
+      "政策支持"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "阿里云创新中心",
@@ -304,8 +466,14 @@
     "focus": "云计算、AI",
     "website": "https://www.aliyun.com/solution/innovation",
     "contact": "",
-    "services": ["云资源", "技术支持", "创业培训", "投资对接"],
-    "source": "公开信息"
+    "services": [
+      "云资源",
+      "技术支持",
+      "创业培训",
+      "投资对接"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "杭州梦想小镇",
@@ -315,8 +483,14 @@
     "focus": "互联网创业",
     "website": "http://www.dreamtown.cn/",
     "contact": "",
-    "services": ["办公空间", "政策支持", "投资基金", "生活配套"],
-    "source": "公开信息"
+    "services": [
+      "办公空间",
+      "政策支持",
+      "投资基金",
+      "生活配套"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "浙江大学国家大学科技园",
@@ -326,8 +500,14 @@
     "focus": "科技成果转化",
     "website": "http://www.zjusp.com/",
     "contact": "",
-    "services": ["孵化服务", "技术转移", "产学研合作", "人才培养"],
-    "source": "公开信息"
+    "services": [
+      "孵化服务",
+      "技术转移",
+      "产学研合作",
+      "人才培养"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   },
   {
     "name": "杭州高新区（滨江）",
@@ -337,7 +517,13 @@
     "focus": "信息技术、电商",
     "website": "http://www.hhtz.gov.cn/",
     "contact": "",
-    "services": ["产业集群", "政策支持", "人才服务", "配套设施"],
-    "source": "公开信息"
+    "services": [
+      "产业集群",
+      "政策支持",
+      "人才服务",
+      "配套设施"
+    ],
+    "source": "公开信息",
+    "verification_status": "待人工复核"
   }
 ]

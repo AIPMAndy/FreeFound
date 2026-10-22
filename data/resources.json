@@ -1,0 +1,51 @@
+[
+  {
+    "id": "devpost",
+    "name": "Devpost · 黑客松目录",
+    "category": "找活动",
+    "description": "按地点、线上/线下、参与资格和活动状态筛选。具体报名与截止时间到活动页确认。",
+    "url": "https://devpost.com/hackathons"
+  },
+  {
+    "id": "mlh",
+    "name": "Major League Hacking（MLH）",
+    "category": "找活动",
+    "description": "学生黑客松社区与活动入口；关注所在地区和赛事日程。",
+    "url": "https://mlh.io/"
+  },
+  {
+    "id": "huodongxing",
+    "name": "活动行 · 国内活动发现",
+    "category": "找活动",
+    "description": "可搜索“黑客松”“开发者”“AI 创业”等关键词；聚合平台上的信息需逐项核对。",
+    "url": "https://www.huodongxing.com/"
+  },
+  {
+    "id": "github-hackathon",
+    "name": "GitHub · Hackathon 开源项目",
+    "category": "学做产品",
+    "description": "查看他人的 Demo、代码结构和产品展示方式；不要把仓库数量当作用户需求。",
+    "url": "https://github.com/topics/hackathon"
+  },
+  {
+    "id": "yc-library",
+    "name": "Y Combinator · 创业资料库",
+    "category": "学做产品",
+    "description": "阅读产品验证、用户访谈、创业团队与增长相关的一手课程资料。",
+    "url": "https://www.ycombinator.com/library"
+  },
+  {
+    "id": "cofounder",
+    "name": "YC Co-Founder Matching",
+    "category": "找队友",
+    "description": "寻找潜在联合创始人。组队前先协作做一件小事，检验互补性与执行力。",
+    "url": "https://www.ycombinator.com/cofounder-matching"
+  },
+  {
+    "id": "startup-school",
+    "name": "YC Startup School",
+    "category": "学做产品",
+    "description": "面向早期创业者的课程与社区入口。具体开放形式和参与资格请以官网为准。",
+    "url": "https://www.startupschool.org/"
+  }
+]

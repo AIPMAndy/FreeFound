@@ -1,384 +1,102 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreeFound - 黑客松与孵化器资源聚合</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            color: white;
-            padding: 60px 20px;
-        }
-        
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .stat-card {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            border-radius: 15px;
-            text-align: center;
-            color: white;
-        }
-        
-        .stat-card h3 {
-            font-size: 2.5em;
-            margin-bottom: 5px;
-        }
-        
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0 20px;
-        }
-        
-        .tab-btn {
-            background: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .tab-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        
-        .tab-btn.active {
-            background: #667eea;
-            color: white;
-        }
-        
-        .content {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-            border-left: 4px solid #667eea;
-        }
-        
-        .card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-        }
-        
-        .card-meta {
-            display: flex;
-            gap: 20px;
-            margin: 10px 0;
-            flex-wrap: wrap;
-        }
-        
-        .card-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .card-meta span::before {
-            content: "📍";
-        }
-        
-        .card-meta span:nth-child(2)::before {
-            content: "📅";
-        }
-        
-        .card-meta span:nth-child(3)::before {
-            content: "👥";
-        }
-        
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .card a:hover {
-            text-decoration: underline;
-        }
-        
-        .tag {
-            display: inline-block;
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-right: 8px;
-            margin-top: 8px;
-        }
-        
-        .search-box {
-            margin-bottom: 30px;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
-            font-size: 1em;
-            transition: all 0.3s;
-        }
-        
-        .search-box input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        
-        footer {
-            text-align: center;
-            color: white;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-        
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8fa">
+<meta name="description" content="FreeFound：从想法到第一个真实用户。查找黑客松、开发者社区、创业学习资源与孵化机构，先做 Demo，再验证需求。">
+<meta property="og:title" content="FreeFound — 先做产品，再谈融资">
+<meta property="og:description" content="面向大学生和独立开发者的创业资源地图与30天行动指南。">
+<title>FreeFound — 先做产品，再谈融资</title>
+<style>
+:root{--bg:#f7f8fa;--surface:#fff;--ink:#131720;--sub:#5b6472;--line:#e5e9ef;--blue:#1768e9;--pale:#eaf2ff;--mint:#eaf8f1;--warning:#926000;--shadow:0 16px 50px rgba(25,38,62,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Segoe UI",sans-serif;color:var(--ink);line-height:1.65}a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bb8ff;outline-offset:3px}
+.shell{max-width:1160px;margin:0 auto;padding:0 25px}.top{background:rgba(247,248,250,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.top-inner{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}.brand{display:inline-flex;align-items:center;gap:10px;font-size:21px;font-weight:760;letter-spacing:-.8px;text-decoration:none}.brand-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;color:white;background:#101725;font-size:18px}.nav{display:flex;align-items:center;gap:22px}.nav a{text-decoration:none;font-size:13px;color:#586170;font-weight:650}.nav a:hover,.links a:hover{color:var(--blue)}.nav a.primary{background:#151a23;color:white;padding:9px 17px;border-radius:99px}.nav a.primary:hover{background:#303b4b}
+.hero{padding:88px 0 45px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#365d90;background:var(--pale);padding:7px 15px;border:1px solid #d7e8ff;border-radius:99px;font-weight:720;font-size:12px;letter-spacing:.3px}.hero h1{font-size:clamp(43px,6.6vw,83px);letter-spacing:-4px;line-height:1.14;margin:22px auto 19px;font-weight:800;max-width:1030px}.hero h1 em{font-style:normal;color:var(--blue)}.hero p{font-size:clamp(16px,2.1vw,20px);color:var(--sub);max-width:750px;margin:0 auto}.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{border-radius:13px;padding:12px 21px;text-decoration:none;font-size:14px;font-weight:750;border:1px solid var(--line);display:inline-flex;gap:9px;align-items:center;justify-content:center;background:var(--surface)}.btn.dark{background:var(--ink);border-color:var(--ink);color:white}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(12,28,52,.1)}.trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:25px;color:#6c7684;font-size:12px}.trust span:before{content:"✓";color:#19805a;margin-right:5px}
+.section{margin:57px 0}.section-kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:var(--blue);margin-bottom:10px}.section h2{font-size:clamp(26px,3.5vw,39px);letter-spacing:-1.5px;margin:0 0 9px;line-height:1.26}.section-desc{color:var(--sub);font-size:14px;margin:0 0 24px}.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{background:var(--surface);border:1px solid var(--line);border-radius:19px;padding:26px 22px;min-height:212px;box-shadow:var(--shadow)}.step .num{display:inline-flex;font-size:11px;border-radius:8px;background:var(--pale);color:#1d5fae;padding:3px 10px;font-weight:800;margin-bottom:27px}.step h3{font-size:20px;letter-spacing:-.4px;margin:0 0 9px}.step p{font-size:13px;color:var(--sub);margin:0}.proof{background:#151b28;border-radius:22px;color:#fff;padding:27px 31px;display:flex;justify-content:space-between;gap:25px;align-items:center;margin:20px 0 55px}.proof p{margin:0;color:#c3ccd9;font-size:14px}.proof strong{font-size:18px;display:block;margin-bottom:5px}.proof .btn{white-space:nowrap}
+.panel{background:white;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{padding:26px 29px 15px;border-bottom:1px solid var(--line)}.tabbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}.tab{border:1px solid transparent;background:transparent;color:#586272;border-radius:11px;padding:9px 16px;font-size:14px;font-weight:740}.tab.active{color:#1458bb;background:var(--pale);border-color:#d5e6ff}.filters{display:grid;grid-template-columns:1fr 190px 170px;gap:12px;align-items:center}.filters input,.filters select{border:1px solid #dce2ea;border-radius:10px;background:#fff;padding:12px 14px;min-width:0;width:100%;color:#263143;font-size:14px}.filters input::placeholder{color:#8a94a3}.helper{padding:14px 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:#6e7886;font-size:12px;background:#fafcff;border-bottom:1px solid var(--line)}.helper strong{color:#1d324e}.list{padding:10px 26px 24px}.item{padding:20px 2px;border-bottom:1px solid #edf0f4;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.item:last-child{border-bottom:0}.item-main{min-width:0}.item-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px}.item h3{margin:0;font-size:17px;letter-spacing:-.2px;line-height:1.5}.pill{display:inline-flex;align-items:center;padding:3px 9px;border-radius:8px;background:#f1f4f8;color:#657184;font-size:11px;font-weight:700;white-space:nowrap}.pill.blue{background:#eaf2ff;color:#1a60c1}.pill.amber{background:#fff4db;color:#885c12}.item p{margin:5px 0;font-size:13px;color:#667181}.item .meta{font-size:12px;color:#83909e;margin-top:9px}.item-link{white-space:nowrap;text-decoration:none;background:#f4f6fa;color:#263143;font-size:12px;padding:9px 13px;border-radius:9px;font-weight:750;margin-top:2px}.item-link:hover{background:var(--pale);color:var(--blue)}.empty{padding:44px 20px;text-align:center}.empty h3{margin:0 0 8px}.empty p{color:var(--sub);font-size:14px;margin:0 0 17px}.empty a{color:var(--blue);font-weight:700}
+.note{padding:22px 25px;background:#fffdf7;border:1px solid #f1e5c7;border-radius:15px;color:#7d622f;font-size:13px;margin-top:17px}.note strong{color:#815a0c}.guide{display:grid;grid-template-columns:1fr 1fr;gap:18px}.guide-card{background:#fff;border-radius:20px;border:1px solid var(--line);padding:26px;box-shadow:var(--shadow)}.guide-card h3{font-size:19px;margin:0 0 12px}.guide-card p{font-size:14px;color:#657080;margin:0 0 12px}.guide-card a{font-size:13px;color:var(--blue);font-weight:750;text-decoration:none}.checks{list-style:none;padding:0;margin:0}.checks li{margin:10px 0;padding-left:26px;position:relative;font-size:14px;color:#586273}.checks li:before{content:"□";position:absolute;left:0;color:var(--blue);font-weight:800}.cta{background:linear-gradient(130deg,#eaf1fa 0%,#ffffff 80%);border:1px solid #dce6f3;border-radius:25px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:22px}.cta h2{margin:0 0 8px;font-size:31px;letter-spacing:-1px}.cta p{color:var(--sub);margin:0;font-size:14px}.cta .right{display:flex;gap:10px;flex-wrap:wrap}.cta button{background:#fff;border:1px solid #dbe3ef}
+footer{border-top:1px solid var(--line);padding:33px 0 45px;margin-top:66px;color:#748091;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.links{display:flex;gap:19px;flex-wrap:wrap}.links a{text-decoration:none}
+#notice{position:fixed;right:22px;bottom:22px;padding:10px 16px;border-radius:11px;background:#172137;color:#fff;font-size:13px;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none;z-index:50}#notice.show{opacity:1;transform:translateY(0)}
+@media(max-width:860px){.journey{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.hero h1{letter-spacing:-2px}.nav a:not(.primary){display:none}}
+@media(max-width:590px){.shell{padding:0 16px}.hero{padding:63px 0 30px}.top-inner{height:62px}.hero h1{font-size:46px}.journey,.guide{grid-template-columns:1fr}.step{min-height:unset}.step .num{margin-bottom:15px}.section{margin:38px 0}.panel-head,.list{padding-left:17px;padding-right:17px}.helper{padding:13px 17px}.filters{grid-template-columns:1fr}.filters input{grid-column:auto}.item{flex-direction:column;gap:9px}.proof,.cta{padding:24px;display:block}.proof .btn,.cta .right{margin-top:18px}.cta h2{font-size:27px}.nav .primary{padding:8px 12px}.btn{padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
 </head>
 <body>
-    <header>
-        <h1>🚀 FreeFound</h1>
-        <p>免费找资源 - 黑客松与孵化器信息聚合平台</p>
-        
-        <div class="stats">
-            <div class="stat-card">
-                <h3 id="hackathon-count">-</h3>
-                <p>黑客松活动</p>
-            </div>
-            <div class="stat-card">
-                <h3 id="incubator-count">-</h3>
-                <p>孵化器</p>
-            </div>
-        </div>
-    </header>
-    
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('hackathons')">🎯 黑客松</button>
-            <button class="tab-btn" onclick="showTab('incubators')">🏢 孵化器</button>
-        </div>
-        
-        <div class="content">
-            <div class="search-box">
-                <input type="text" id="search" placeholder="🔍 搜索活动或孵化器..." onkeyup="filterItems()">
-            </div>
-            
-            <div id="hackathons-content">
-                <div class="loading">正在加载黑客松数据...</div>
-            </div>
-            
-            <div id="incubators-content" class="hidden">
-                <div class="loading">正在加载孵化器数据...</div>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
-        <p>
-            <a href="https://github.com/AIPMAndy/FreeFound" target="_blank">GitHub</a> |
-            <a href="https://github.com/AIPMAndy/FreeFound/issues" target="_blank">反馈建议</a> |
-            <a href="https://github.com/AIPMAndy/FreeFound/blob/main/README.md" target="_blank">关于项目</a>
-        </p>
-        <p style="margin-top: 10px; opacity: 0.8;">
-            Made with ❤️ by FreeFound Community
-        </p>
-    </footer>
-    
-    <script>
-        let hackathonsData = [];
-        let incubatorsData = [];
-        let currentTab = 'hackathons';
-        
-        // 加载数据
-        async function loadData() {
-            try {
-                // 加载黑客松数据
-                const hackathonsResp = await fetch('data/hackathons.json');
-                hackathonsData = await hackathonsResp.json();
-                document.getElementById('hackathon-count').textContent = hackathonsData.length;
-                renderHackathons(hackathonsData);
-                
-                // 加载孵化器数据
-                const incubatorsResp = await fetch('data/incubators.json');
-                incubatorsData = await incubatorsResp.json();
-                document.getElementById('incubator-count').textContent = incubatorsData.length;
-                renderIncubators(incubatorsData);
-                
-            } catch (error) {
-                console.error('数据加载失败:', error);
-                document.getElementById('hackathons-content').innerHTML = '<p style="color: red;">数据加载失败，请刷新重试</p>';
-            }
-        }
-        
-        // 渲染黑客松列表
-        function renderHackathons(data) {
-            const container = document.getElementById('hackathons-content');
-            
-            if (data.length === 0) {
-                container.innerHTML = '<p>暂无数据</p>';
-                return;
-            }
-            
-            container.innerHTML = data.map(item => `
-                <div class="card" data-title="${item.title}" data-location="${item.location}">
-                    <h3>${item.title}</h3>
-                    <div class="card-meta">
-                        ${item.location ? `<span>${item.location}</span>` : ''}
-                        ${item.time ? `<span>${item.time}</span>` : ''}
-                        ${item.organizer ? `<span>${item.organizer}</span>` : ''}
-                    </div>
-                    <div>
-                        <span class="tag">${item.source}</span>
-                    </div>
-                    <a href="${item.link}" target="_blank">查看详情 →</a>
-                </div>
-            `).join('');
-        }
-        
-        // 渲染孵化器列表
-        function renderIncubators(data) {
-            const container = document.getElementById('incubators-content');
-            
-            if (data.length === 0) {
-                container.innerHTML = '<p>暂无数据</p>';
-                return;
-            }
-            
-            container.innerHTML = data.map(item => `
-                <div class="card" data-title="${item.name}" data-location="${item.location}">
-                    <h3>${item.name}</h3>
-                    <div class="card-meta">
-                        <span>${item.location}</span>
-                        <span>${item.type}</span>
-                        <span>${item.focus}</span>
-                    </div>
-                    <div>
-                        ${item.services ? item.services.map(s => `<span class="tag">${s}</span>`).join('') : ''}
-                    </div>
-                    ${item.website ? `<a href="${item.website}" target="_blank">访问官网 →</a>` : ''}
-                </div>
-            `).join('');
-        }
-        
-        // 切换标签
-        function showTab(tab) {
-            currentTab = tab;
-            
-            // 更新按钮状态
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // 切换内容
-            if (tab === 'hackathons') {
-                document.getElementById('hackathons-content').classList.remove('hidden');
-                document.getElementById('incubators-content').classList.add('hidden');
-            } else {
-                document.getElementById('hackathons-content').classList.add('hidden');
-                document.getElementById('incubators-content').classList.remove('hidden');
-            }
-            
-            // 清空搜索
-            document.getElementById('search').value = '';
-            filterItems();
-        }
-        
-        // 搜索过滤
-        function filterItems() {
-            const searchTerm = document.getElementById('search').value.toLowerCase();
-            const cards = document.querySelectorAll('.card');
-            
-            cards.forEach(card => {
-                const title = card.dataset.title.toLowerCase();
-                const location = card.dataset.location.toLowerCase();
-                
-                if (title.includes(searchTerm) || location.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-        
-        // 页面加载时获取数据
-        loadData();
-    </script>
+<div class="top"><div class="shell top-inner"><a class="brand" href="#home"><span class="brand-mark">F</span> FreeFound</a><nav class="nav" aria-label="主导航"><a href="#roadmap">创业路径</a><a href="#directory">资源库</a><a href="#checklist">验证清单</a><a href="https://metaver.vip/" target="_blank" rel="noopener noreferrer" class="primary">AI 酋长 Andy ↗</a></nav></div></div>
+<main id="home" class="shell">
+<section class="hero" aria-labelledby="main-title">
+<span class="eyebrow">FREEFOUND · BUILD FIRST</span>
+<h1 id="main-title">先做产品。<br><em>再谈融资。</em></h1>
+<p>大学生创业，先找到真实问题、靠谱队友，做出能用的 Demo，交给用户验证。黑客松和孵化器只是工具，真实需求才是起点。</p>
+<div class="hero-actions"><a class="btn dark" href="#directory">探索创业资源 ↗</a><a class="btn" href="#roadmap">查看 30 天路径 →</a><a class="btn" href="https://github.com/AIPMAndy/FreeFound" target="_blank" rel="noopener noreferrer">GitHub 开源仓库 ↗</a></div>
+<div class="trust"><span>开放资源</span><span>记录标注时效</span><span>不编造报名状态</span><span>链接以官方信息为准</span></div>
+</section>
+<section class="section" id="roadmap"><div class="section-kicker">STARTUP PLAYBOOK</div><h2>从想法到第一个真实用户</h2><p class="section-desc">30 天行动路径，四步走。时间只是执行建议，不保证创业结果。</p>
+<div class="journey">
+<article class="step"><span class="num">WEEK 01 · 问题</span><h3>找问题</h3><p>选一个具体人群，做 10 次访谈。弄清对方现在怎么解决问题、花什么成本。</p></article>
+<article class="step"><span class="num">WEEK 02 · 协作</span><h3>找队友</h3><p>参加黑客松或开发者社区活动，和潜在合伙人做一次小型协作，先看执行力。</p></article>
+<article class="step"><span class="num">WEEK 03 · 构建</span><h3>做 Demo</h3><p>只实现一个核心任务，产出可点击、可演示、可交付的最小可行原型。</p></article>
+<article class="step"><span class="num">WEEK 04 · 反馈</span><h3>真验证</h3><p>找 5 位目标用户实际试用，记录使用行为、复用意愿与付费信号，再决定要不要加码。</p></article>
+</div></section>
+<div class="proof"><div><strong>融资应该加速已有的验证，而不是代替验证。</strong><p>少讲愿景，多拿出用户行为、留存、付费或明确的需求证据。</p></div><a class="btn" href="https://github.com/AIPMAndy/FreeFound/blob/main/guides/30-day-startup.md" target="_blank" rel="noopener noreferrer">查看完整执行方案 ↗</a></div>
+<section class="section" id="directory"><div class="section-kicker">RESOURCE LIBRARY</div><h2>资源入口，尽量少走弯路</h2><p class="section-desc">优先提供平台官方入口；具体活动报名、资格与孵化政策，以对应主办方最新公告为准。</p>
+<div class="panel"><div class="panel-head">
+<div class="tabbar" role="tablist" aria-label="资源分类">
+<button class="tab active" role="tab" aria-selected="true" data-tab="resources">精选入口</button>
+<button class="tab" role="tab" aria-selected="false" data-tab="hackathons">黑客松档案</button>
+<button class="tab" role="tab" aria-selected="false" data-tab="incubators">孵化机构线索</button>
+</div>
+<div class="filters"><input id="query" type="search" aria-label="搜索资源" placeholder="搜索名字、城市、方向、标签…"><select id="topic" aria-label="资源主题"><option value="">全部主题</option></select><select id="visibility" aria-label="状态筛选"><option value="all">全部记录</option><option value="current">仅未结束活动</option></select></div>
+</div><div class="helper"><span id="summary" aria-live="polite">正在加载数据…</span><span id="asof"></span></div><div class="list" id="items" aria-live="polite"></div></div>
+<div class="note"><strong>数据说明：</strong>这里的历史活动不是当前报名推荐；机构目录是<strong>待核验线索</strong>，收录不代表仍在运营或当前开放申请。未经逐项复核，页面不会宣称“正在报名”“已经认证”“每天更新”。<a href="https://github.com/AIPMAndy/FreeFound/issues/new" target="_blank" rel="noopener noreferrer">发现问题，提交修正 ↗</a></div>
+</section>
+<section class="section" id="checklist"><div class="section-kicker">DECISION GATE</div><h2>什么时候才值得考虑融资？</h2><p class="section-desc">先过基本事实关。没有这些证据，优先继续做产品和访谈。</p>
+<div class="guide"><article class="guide-card"><h3>先验证的 5 件事</h3><ul class="checks"><li>可以描述清楚一个特定用户与高频问题</li><li>已经有能演示核心价值的产品或服务</li><li>有真实用户亲自尝试，而非只有朋友夸奖</li><li>有复用、留存、付款或明确采购意向等证据</li><li>知道下一笔钱将投入哪里、如何验证效果</li></ul></article>
+<article class="guide-card"><h3>也要考虑反例</h3><p>部分硬科技、医疗器械、芯片及重资产研发项目，确实可能需要在商业化前融资。判断依据是研发周期、资本开支、法规与里程碑，而非“融资越早越好”。</p><p>黑客松能训练交付与认识合作者，但获奖和 Demo 都不等于产品市场匹配。</p><a href="https://www.ycombinator.com/library" target="_blank" rel="noopener noreferrer">补充学习：YC 创业资料库 ↗</a></article></div>
+</section>
+<section class="section"><div class="cta"><div><div class="section-kicker">BY AI 酋长 ANDY</div><h2>想把想法真正做出来？</h2><p>FreeFound 免费开源。需要 AI 产品、个人成长或商业化相关咨询，可通过官网了解服务。微信搜索 <strong>AIPMAndy</strong>。</p></div><div class="right"><a class="btn dark" href="https://metaver.vip/" target="_blank" rel="noopener noreferrer">访问 Andy 官网 ↗</a><button class="btn" type="button" id="wechat">复制微信号 ↗</button></div></div></section>
+</main>
+<footer><div class="shell footer-inner"><span>© <span id="year"></span> FreeFound · AI 酋长 Andy · 免费开源，信息持续校对中</span><div class="links"><a href="https://github.com/AIPMAndy/FreeFound" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://metaver.vip/" target="_blank" rel="noopener noreferrer">个人官网</a><a href="https://github.com/AIPMAndy/FreeFound/issues" target="_blank" rel="noopener noreferrer">纠错反馈</a></div></div></footer>
+<div id="notice" role="status" aria-live="polite"></div>
+<script>
+(function(){
+"use strict";
+var DATA={resources:[],hackathons:[],incubators:[]};
+var active="resources";
+var q=document.getElementById("query"),topic=document.getElementById("topic"),vis=document.getElementById("visibility"),out=document.getElementById("items"),summary=document.getElementById("summary");
+var today=new Date();var todayISO=[today.getFullYear(),String(today.getMonth()+1).padStart(2,"0"),String(today.getDate()).padStart(2,"0")].join("-");
+document.getElementById("asof").textContent="浏览日期："+todayISO+" · 不是实时报名数据";
+document.getElementById("year").textContent=today.getFullYear();
+function el(tag,cls,t){var x=document.createElement(tag);if(cls)x.className=cls;if(t!==undefined)x.textContent=String(t);return x}
+function safeLink(value){try{var u=new URL(value);return u.protocol==="https:"||u.protocol==="http:"?u.href:null}catch(e){return null}}
+function words(x){return [x.title,x.name,x.location,x.organizer,x.source,x.focus,x.type,x.description,(x.tags||[]).join(" "),(x.services||[]).join(" "),x.category].filter(Boolean).join(" ").toLowerCase()}
+function endDate(x){var parts=String(x.time||"").match(/\d{4}\.\d{2}\.\d{2}/g)||[];if(!parts.length)return null;return parts[parts.length-1].replace(/\./g,"-")}
+function state(x){var e=endDate(x);if(!e)return "时间待核";return e<todayISO?"已结束":"日期未过（报名待核）"}
+function options(){var cats=active==="resources" ? [...new Set(DATA.resources.map(function(x){return x.category}).filter(Boolean))] : active==="incubators" ? [...new Set(DATA.incubators.map(function(x){return x.type}).filter(Boolean))]:[...new Set(DATA.hackathons.map(function(x){return x.location}).filter(Boolean))];topic.replaceChildren(el("option","", "全部主题"));topic.firstChild.value="";cats.sort().forEach(function(c){var opt=el("option","",c);opt.value=c;topic.appendChild(opt)});topic.style.display=active==="hackathons"||cats.length? "":"none";vis.style.display=active==="hackathons"?"":"none"}
+function record(x){var item=el("article","item"),main=el("div","item-main"),head=el("div","item-head");
+var name=x.title||x.name||"未命名资源";head.appendChild(el("h3","",name));var flag=active==="hackathons"?state(x):active==="incubators"?"待核验":x.category||"资源";
+head.appendChild(el("span","pill "+(active==="hackathons"?"amber":active==="resources"?"blue":""),flag));main.appendChild(head);
+if(x.description)main.appendChild(el("p","",x.description));
+if(active==="hackathons"){main.appendChild(el("p","", [x.time||"时间未提供",x.location||"地区未提供"].join(" · ")));main.appendChild(el("p","meta","来源："+(x.source||"未知")+" · 原始链接需自行核验报名条件"))}
+if(active==="incubators"){main.appendChild(el("p","",[x.location||"地点待核",x.type||"类型待核",x.focus||""].filter(Boolean).join(" · ")));main.appendChild(el("p","meta","机构及服务状态未独立核验，请在官网确认地址、资格及申请开放情况"))}
+if(active==="resources")main.appendChild(el("p","meta","平台入口 · 具体活动/服务规则请以来源网站为准"));
+item.appendChild(main);var url=safeLink(x.url||x.link||x.website);
+if(url){var a=el("a","item-link",active==="resources"?"前往官网 ↗":"查看来源 ↗");a.href=url;a.target="_blank";a.rel="noopener noreferrer nofollow";a.setAttribute("aria-label","打开"+name+"的外部链接");item.appendChild(a)}
+return item}
+function render(){var arr=DATA[active]||[],term=q.value.trim().toLowerCase(),cat=topic.value;
+arr=arr.filter(function(x){return(!term||words(x).includes(term))&&(!cat||(active==="resources"?x.category:active==="incubators"?x.type:x.location)===cat)&&(active!=="hackathons"||vis.value!=="current"||(endDate(x)&&endDate(x)>=todayISO))});
+summary.textContent= "显示 "+arr.length+" / "+(DATA[active]||[]).length+" 条 · "+(active==="resources"?"长期资源入口":active==="hackathons"?"历史活动与日期记录（当前报名状态未确认）":"机构线索（未经运营状态核验）");
+out.replaceChildren();if(!arr.length){var empty=el("div","empty");empty.appendChild(el("h3","","没有符合条件的记录"));empty.appendChild(el("p","",active==="hackathons"?"站内尚未确认任何可报名的新活动。优先在 Devpost 或 MLH 官方平台查找最新信息。":"换一个搜索词或筛选条件试试。"));var a=el("a","","浏览官方黑客松目录 ↗");a.href="https://devpost.com/hackathons";a.target="_blank";a.rel="noopener noreferrer";empty.appendChild(a);out.appendChild(empty);return}
+var frag=document.createDocumentFragment();arr.forEach(function(x){frag.appendChild(record(x))});out.appendChild(frag)}
+function change(tab){active=tab;q.value="";vis.value="all";document.querySelectorAll("[data-tab]").forEach(function(b){var on=b.dataset.tab===tab;b.classList.toggle("active",on);b.setAttribute("aria-selected",on?"true":"false")});options();render()}
+document.querySelectorAll("[data-tab]").forEach(function(b){b.addEventListener("click",function(){change(b.dataset.tab)})});
+q.addEventListener("input",render);topic.addEventListener("change",render);vis.addEventListener("change",render);
+function toast(message){var n=document.getElementById("notice");n.textContent=message;n.classList.add("show");setTimeout(function(){n.classList.remove("show")},2500)}
+document.getElementById("wechat").addEventListener("click",function(){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText("AIPMAndy").then(function(){toast("已复制微信号 AIPMAndy")}).catch(function(){toast("请手动复制：AIPMAndy")})}else{toast("请手动复制微信号：AIPMAndy")}});
+Promise.all([fetch("./data/resources.json"),fetch("./data/hackathons.json"),fetch("./data/incubators.json")].map(function(p){return p.then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})})).then(function(all){if(!all.every(Array.isArray))throw new Error("数据格式错误");DATA.resources=all[0];DATA.hackathons=all[1];DATA.incubators=all[2];change("resources")}).catch(function(e){summary.textContent="数据暂时不可用";out.replaceChildren();var note=el("div","empty");note.appendChild(el("h3","","加载失败"));note.appendChild(el("p","","请刷新页面，或到 GitHub 查看原始数据。"));var a=el("a","","查看仓库 ↗");a.href="https://github.com/AIPMAndy/FreeFound";note.appendChild(a);out.appendChild(note);console.error("FreeFound data:",e)});
+})();
+</script>
 </body>
 </html>
