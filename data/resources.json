@@ -47,5 +47,19 @@
     "category": "学做产品",
     "description": "面向早期创业者的课程与社区入口。具体开放形式和参与资格请以官网为准。",
     "url": "https://www.startupschool.org/"
+  },
+  {
+    "id": "hackertrip",
+    "name": "HackerTrip · 国内黑客松日历",
+    "category": "找活动",
+    "description": "第三方国内黑客松聚合入口，可按月份寻找活动线索；日期与报名资格必须再到主办方核验。",
+    "url": "https://hackertrip.cn/"
+  },
+  {
+    "id": "modelscope",
+    "name": "魔搭 ModelScope · AI Demo 构建",
+    "category": "学做产品",
+    "description": "中文开源模型、数据集和应用创空间。适合验证 AI 原型所需的模型能力和展示方式。",
+    "url": "https://modelscope.cn/"
   }
 ]
