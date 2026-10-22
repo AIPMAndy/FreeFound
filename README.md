@@ -5,7 +5,7 @@
 🌐 **网站**：https://aipmandy.github.io/FreeFound/  
 📚 **30 天行动指南**：[从问题到真实用户](guides/30-day-startup.md)  
 🧪 **对抗式审核**：[审核记录与风险](AUDIT.md)  
-👤 **作者**：AI 酋长 Andy · https://metaver.vip/ · 微信 \`AIPMAndy\`
+👤 **作者**：AI 酋长 Andy · https://metaver.vip/ · 微信 `AIPMAndy`
 
 ## 一句话讲清楚
 
@@ -19,11 +19,11 @@
 | **黑客松档案** | 保存有来源链接的历史活动，帮助研究过往主题与主办方 | **当前 4 条历史记录**；不可视为实时活动库 |
 | **孵化机构线索** | 提供区域、类型、服务方向、官网线索 | **31 条待人工核验线索**，不保证正在运营或接收申请 |
 | **30 天行动指南** | 问题访谈 → 协作 → Demo → 用户验证 | 方法论示例，不保证融资或商业结果 |
-| **本地 API** | \`python api_server.py\` 后提供 JSON 查询 | GitHub Pages **不提供**托管 API 服务 |
+| **本地 API** | `python api_server.py` 后提供 JSON 查询 | GitHub Pages **不提供**托管 API 服务 |
 
 ## 数据可信度
 
-2026-10-22 代码审核发现：原始的 50 条黑客松中 **46 条使用 \`example.com\` 虚构占位网址**，已从公开 JSON 移除。剩余 4 条活动均已过期，页面清楚标注历史状态。对于孵化机构，网站统一显示待核验线索。**数量少一点可以，误导用户报名不行。**
+2026-10-22 代码审核发现：原始的 50 条黑客松中 **46 条使用 `example.com` 虚构占位网址**，已从公开 JSON 移除。剩余 4 条活动均已过期，页面清楚标注历史状态。对于孵化机构，网站统一显示待核验线索。**数量少一点可以，误导用户报名不行。**
 
 此前文档宣称每天自动更新，但仓库缺少对应自动化流程，因此删除该说法。新增 GitHub Actions 只验证数据结构和阻止占位链接，**不代表活动实时验证**。本项目没有自动验证所有外部网站真实性的能力。
 
@@ -35,27 +35,27 @@ https://aipmandy.github.io/FreeFound/
 
 ### 本地静态网站
 
-\`\`\`bash
+```bash
 git clone https://github.com/AIPMAndy/FreeFound.git
 cd FreeFound
 python3 -m http.server 8000
 # 浏览器打开 http://localhost:8000
-\`\`\`
+```
 
 ### 数据校验
 
-\`\`\`bash
+```bash
 python3 scripts/validate_data.py
 python3 collector.py
-\`\`\`
+```
 
 ### 本地 API（不等于线上 API）
 
-\`\`\`bash
+```bash
 python3 api_server.py 8080
 curl "http://localhost:8080/api/hackathons"
 curl "http://localhost:8080/api/incubators?location=北京"
-\`\`\`
+```
 
 ### 静态数据
 
@@ -65,7 +65,7 @@ curl "http://localhost:8080/api/incubators?location=北京"
 
 ## 贡献新活动的最低门槛
 
-请先读 [CONTRIBUTING.md](CONTRIBUTING.md)。具体记录至少包含：真实名称、主办方 / 来源、原始网址、开始结束日期、地区、核验日期与确认方式。严禁 \`example.com\` 及虚构的“正在报名”状态。未能核实的信息在 Issue 中作为**线索**提交，不得假装真实开放。
+请先读 [CONTRIBUTING.md](CONTRIBUTING.md)。具体记录至少包含：真实名称、主办方 / 来源、原始网址、开始结束日期、地区、核验日期与确认方式。严禁 `example.com` 及虚构的“正在报名”状态。未能核实的信息在 Issue 中作为**线索**提交，不得假装真实开放。
 
 ## 项目边界
 
@@ -76,7 +76,7 @@ curl "http://localhost:8080/api/incubators?location=北京"
 
 ## 技术结构
 
-\`\`\`
+```
 FreeFound/
 ├── index.html                  # GitHub Pages 单页站
 ├── data/
@@ -90,10 +90,10 @@ FreeFound/
 ├── api_server.py               # 本地 REST API
 ├── AUDIT.md                    # 对抗式审核记录
 └── LICENSE
-\`\`\`
+```
 
 欢迎在 [Issues](https://github.com/AIPMAndy/FreeFound/issues) 提交官方活动来源、坏链、机构运营情况和勘误。请勿向本仓库提交个人联系方式或未经同意的私人数据。
 
-**作者：AI 酋长 Andy** · [官网](https://metaver.vip/) · [咨询与陪跑](https://metaver.vip/services) · 微信搜索 \`AIPMAndy\`
+**作者：AI 酋长 Andy** · [官网](https://metaver.vip/) · [咨询与陪跑](https://metaver.vip/services) · 微信搜索 `AIPMAndy`
 
 MIT License

@@ -15,3 +15,7 @@ jobs:
           python-version: '3.11'
       - name: Validate static data
         run: python3 scripts/validate_data.py
+      - name: Compile Python files
+        run: python3 -m py_compile api_server.py collector.py scripts/validate_data.py
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v

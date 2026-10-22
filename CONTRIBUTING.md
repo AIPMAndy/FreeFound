@@ -1,270 +1,59 @@
-# 贡献指南
+# 为 FreeFound 贡献资源
 
-感谢你对 FreeFound 项目的关注！我们欢迎任何形式的贡献。
+感谢参与！本项目优先保证真实性、可复核性与对学生有用的行动建议。
 
-## 🎯 贡献方式
+## 先分清两类贡献
 
-### 1. 补充数据
+1. **已核实记录**：能给出主办方或平台官网、明确日期、地区和验证依据，可提交 PR。
+2. **待核实线索**：活动海报、社交媒体消息、群聊转发、往年活动或无法确认来源的资料，请先创建 Issue，不要直接写进“可报名”数据。
 
-**最简单的贡献方式**：补充黑客松或孵化器信息
+## 黑客松必需信息
 
-- 提交 Issue 告诉我们
-- 或直接编辑 JSON 文件提交 PR
+提交到 data/hackathons.json 的项目应包含：
 
-### 2. 改进代码
-
-- 优化数据收集器
-- 添加新的数据源
-- 改进网页界面
-- 修复 Bug
-
-### 3. 完善文档
-
-- 改进 README
-- 补充使用案例
-- 翻译文档
-
-### 4. 分享传播
-
-- Star 本项目
-- 分享给需要的朋友
-- 在社交媒体推荐
-
-## 📝 提交数据
-
-### 黑客松数据
-
-在 `data/hackathons.json` 中添加：
-
-```json
+~~~json
 {
-  "title": "活动名称",
-  "time": "2026.05.01-2026.05.30",
-  "location": "城市/地区",
-  "organizer": "主办方",
-  "link": "https://活动链接",
-  "source": "数据来源"
+  "title": "活动官方名称",
+  "time": "2026.11.01-2026.11.03",
+  "location": "活动官方披露地点或线上",
+  "organizer": "官方主办方",
+  "link": "https://活动主办方真实网址",
+  "source": "主办方官网",
+  "verification_status": "人工复核",
+  "verified_at": "2026-10-22",
+  "tags": ["AI", "学生"]
 }
-```
+~~~
 
-**必填字段**：
-- `title`: 活动名称
-- `link`: 活动链接
-- `source`: 数据来源
+上述为**字段示例**，不是一个真实的可报名活动。不得把这个例子直接放进数据集。
 
-**选填字段**：
-- `time`: 活动时间
-- `location`: 活动地点
-- `organizer`: 主办方
+请人工核对：官网是否能打开、起止日期是否准确、是否开放报名、申请资格是否受限、活动是否取消或更改时间。报名状态易变化，**不要用永久静态字段“报名中”代替现场确认**。
 
-### 孵化器数据
+## 孵化机构记录
 
-在 `data/incubators.json` 中添加：
+补充机构应核对实体名称、类型（联合办公、产业园区、孵化器、加速器）、官方链接、当前城市与运营状态；对开放申请、资金扶持或优惠资格必须提供当期的官方细则。缺乏证据时保留为“待人工复核”，不能标注“已认证”。
 
-```json
-{
-  "name": "孵化器名称",
-  "location": "所在城市",
-  "address": "详细地址",
-  "type": "孵化器类型",
-  "focus": "关注领域",
-  "website": "https://官网",
-  "contact": "联系方式",
-  "services": ["服务1", "服务2"],
-  "source": "数据来源"
-}
-```
+## 不接受的提交
 
-**必填字段**：
-- `name`: 孵化器名称
-- `location`: 所在城市
-- `source`: 数据来源
+- `example.com`、虚构 URL、臆造活动、复制粘贴未验证的日期。
+- 为提高收录条数而批量生成不存在的主办方或孵化器。
+- 未经同意公开个人手机号、微信、申请人材料等私人信息。
+- 绕过来源网站限制爬取、虚报政府背书或保证融资结果。
 
-## 🔧 开发指南
+## 开发与测试
 
-### 环境准备
+~~~bash
+python3 scripts/validate_data.py
+python3 -m unittest discover -s tests -v
+python3 -m http.server 8000
+~~~
 
-```bash
-# 克隆项目
-git clone https://github.com/AIPMAndy/FreeFound.git
-cd FreeFound
+页面检查：桌面与手机搜索、键盘 Tab、无结果状态、外链跳转、资源 JSON 加载失败。新页面数据渲染必须使用安全 DOM API，外部链接加 rel=noopener noreferrer。
 
-# 安装依赖
-pip install requests beautifulsoup4
+## 提交流程
 
-# 运行测试
-python collector.py
-```
+Fork 仓库，在分支中修改文件，执行校验，通过 Pull Request 说明来源网址、核验日期、截图或核验方法。维护者复核后再合并。问题或勘误请到 [Issues](https://github.com/AIPMAndy/FreeFound/issues)。
 
-### 添加新数据源
+项目开源不意味着对第三方内容背书。请尊重相关站点的使用条款、版权和活动主办方的报名规则。
 
-1. 在 `collector.py` 中添加新的收集方法：
-
-```python
-def collect_new_source(self):
-    """收集新数据源"""
-    print("📍 收集新数据源...")
-    
-    url = "https://new-source.com/api"
-    
-    try:
-        resp = requests.get(url, headers=self.headers, timeout=10)
-        data = resp.json()
-        
-        for item in data:
-            self.hackathons.append({
-                "title": item['title'],
-                "link": item['url'],
-                "source": "新数据源"
-            })
-        
-        print(f"✅ 新数据源收集完成\n")
-        
-    except Exception as e:
-        print(f"✗ 新数据源收集失败: {e}\n")
-```
-
-2. 在 `main()` 函数中调用：
-
-```python
-hackathon_collector.collect_new_source()
-```
-
-### 代码规范
-
-- 使用 Python 3.9+
-- 遵循 PEP 8 代码风格
-- 添加必要的注释和文档字符串
-- 处理异常情况
-
-### 提交规范
-
-**Commit Message 格式**：
-
-```
-<type>: <subject>
-
-<body>
-```
-
-**Type 类型**：
-- `feat`: 新功能
-- `fix`: Bug 修复
-- `docs`: 文档更新
-- `style`: 代码格式调整
-- `refactor`: 代码重构
-- `test`: 测试相关
-- `chore`: 构建/工具相关
-
-**示例**：
-
-```
-feat: 添加掘金黑客松数据源
-
-- 实现掘金 API 调用
-- 添加数据格式转换
-- 更新文档说明
-```
-
-## 🚀 Pull Request 流程
-
-1. **Fork 项目**
-   
-   点击右上角 Fork 按钮
-
-2. **创建分支**
-   
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **提交更改**
-   
-   ```bash
-   git add .
-   git commit -m "feat: 你的功能描述"
-   ```
-
-4. **推送分支**
-   
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-5. **创建 Pull Request**
-   
-   - 进入你的 Fork 仓库
-   - 点击 "New Pull Request"
-   - 填写 PR 描述
-   - 等待 Review
-
-### PR 描述模板
-
-```markdown
-## 变更类型
-- [ ] 新功能
-- [ ] Bug 修复
-- [ ] 文档更新
-- [ ] 数据补充
-
-## 变更说明
-简要描述你的变更内容
-
-## 测试
-说明如何测试你的变更
-
-## 截图（如适用）
-添加相关截图
-
-## Checklist
-- [ ] 代码遵循项目规范
-- [ ] 已添加必要的注释
-- [ ] 已更新相关文档
-- [ ] 已测试变更内容
-```
-
-## ✅ 数据质量标准
-
-### 黑客松数据
-
-- ✅ 活动真实存在
-- ✅ 链接可访问
-- ✅ 时间格式统一（YYYY.MM.DD）
-- ✅ 信息完整准确
-- ❌ 不添加已结束超过3个月的活动
-- ❌ 不添加虚假或广告信息
-
-### 孵化器数据
-
-- ✅ 孵化器真实存在
-- ✅ 官网可访问
-- ✅ 联系方式有效
-- ✅ 服务内容准确
-- ❌ 不添加已关闭的孵化器
-- ❌ 不添加纯广告性质的内容
-
-## 🎖️ 贡献者
-
-感谢所有贡献者！你的名字将出现在：
-- README 贡献者列表
-- GitHub Contributors 页面
-- 项目网站致谢页面
-
-## 📞 联系我们
-
-- GitHub Issues: [提交问题](https://github.com/AIPMAndy/FreeFound/issues)
-- GitHub Discussions: [参与讨论](https://github.com/AIPMAndy/FreeFound/discussions)
-- Email: 通过 GitHub Profile 联系维护者
-
-## 📄 行为准则
-
-参与本项目即表示你同意遵守我们的行为准则：
-
-- 尊重所有贡献者
-- 接受建设性批评
-- 关注项目目标
-- 保持友好和专业
-
----
-
-再次感谢你的贡献！🎉
+作者：AI 酋长 Andy · [官网](https://metaver.vip/) · 微信 `AIPMAndy`。

@@ -1,203 +1,67 @@
-# 使用指南
+# FreeFound 使用指南
 
-## 📖 快速开始
+本指南最后校对：2026-10-22。
 
-### 1. 查看数据
+## 网站与数据
 
-**在线查看**：访问 [FreeFound 网页版](https://aipmAndy.github.io/FreeFound/)
+- [GitHub Pages 在线网站](https://aipmandy.github.io/FreeFound/)
+- [长期资源入口](data/resources.json)
+- [历史黑客松](data/hackathons.json)
+- [孵化机构线索](data/incubators.json)
+- [30 天创业验证路径](guides/30-day-startup.md)
 
-**本地查看**：
-```bash
-# 克隆项目
+**数据状态说明：**当前黑客松清单只有 4 条历史记录；机构资料有 31 条，尚未逐一核验现时运营状态。页面按活动结束日期判定“已结束”，不会自动证明正在报名。请到主办方官网核实参与资格和申请细则。
+
+### 搜索和筛选
+
+1. 在“精选入口 / 黑客松档案 / 孵化机构线索”之间切换。
+2. 输入关键词搜索名称、地点、方向或标签。
+3. 使用主题筛选。黑客松“仅未结束活动”只代表日期没过，不代表报名仍开放。
+4. 点击外部链接时将进入独立第三方站点。
+
+## 本地启动
+
+~~~bash
 git clone https://github.com/AIPMAndy/FreeFound.git
 cd FreeFound
+python3 -m http.server 8000
+~~~
 
-# 查看黑客松数据
-cat data/hackathons.json
+浏览器访问 http://localhost:8000 ，**不要双击 HTML 直接以 file:// 打开**，否则浏览器可能阻止 JSON fetch。
 
-# 查看孵化器数据
-cat data/incubators.json
-```
+## 本地 API
 
-### 2. 运行数据收集器
+网站是静态 GitHub Pages；`api_server.py` **不是在线托管 API**，需要用户在自己电脑上运行。
 
-```bash
-# 安装依赖
-pip install requests beautifulsoup4
+~~~bash
+python3 api_server.py 8080
+curl "http://localhost:8080/api/hackathons"
+curl "http://localhost:8080/api/incubators?location=北京"
+curl "http://localhost:8080/api/stats"
+~~~
 
-# 运行收集器
-python collector.py
-```
+接口：
 
-### 3. 本地预览网页
+| 路径 | 可选参数 |
+| --- | --- |
+| /api/hackathons | location, source, q, limit |
+| /api/incubators | location, type, q, limit |
+| /api/resources | category, q, limit |
+| /api/stats | 无 |
 
-```bash
-# 使用 Python 启动本地服务器
-python -m http.server 8000
+`limit` 必须是 1–200 之间的整数；默认 100。JSON 返回的活动历史不等于实时报名信息。
 
-# 访问 http://localhost:8000
-```
+## 数据贡献
 
-## 🔧 高级用法
+请参考 [CONTRIBUTING.md](CONTRIBUTING.md)。直接提交已核实的活动时，需要原始主办方来源、起止日期、地区、核验时间和证据链接。仅有微信群截图或无来源文字，先提交 Issue 作为**待核验线索**，不要并入活动清单。
 
-### 自定义数据收集
+## 数据检测
 
-编辑 `collector.py`，添加新的数据源：
+~~~bash
+python3 scripts/validate_data.py
+python3 -m unittest discover -s tests -v
+~~~
 
-```python
-class HackathonCollector:
-    def collect_your_source(self):
-        """收集你的数据源"""
-        url = "https://your-source.com/api"
-        # 实现你的收集逻辑
-        pass
-```
+CI 阻止明显无效链接、坏日期和重复内容；**CI 通过不意味着真人已验证活动真实、机构在营业或报名开放**。
 
-### 定时自动更新
-
-项目已配置 GitHub Actions，每天自动更新数据。
-
-手动触发更新：
-1. 进入 GitHub 仓库
-2. 点击 Actions 标签
-3. 选择 "自动更新数据" workflow
-4. 点击 "Run workflow"
-
-### API 使用
-
-直接访问 JSON 数据：
-
-```bash
-# 黑客松数据
-curl https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/hackathons.json
-
-# 孵化器数据
-curl https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/incubators.json
-```
-
-在你的项目中使用：
-
-```javascript
-// JavaScript
-fetch('https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/hackathons.json')
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```python
-# Python
-import requests
-
-url = "https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/hackathons.json"
-data = requests.get(url).json()
-print(data)
-```
-
-## 📊 数据格式说明
-
-### 黑客松数据
-
-```json
-{
-  "title": "活动名称",
-  "time": "2026.05.01-2026.05.30",
-  "location": "城市/地区",
-  "organizer": "主办方",
-  "link": "活动链接",
-  "source": "数据来源",
-  "collected_at": "2026-05-06T20:00:00"
-}
-```
-
-### 孵化器数据
-
-```json
-{
-  "name": "孵化器名称",
-  "location": "所在城市",
-  "address": "详细地址",
-  "type": "孵化器类型",
-  "focus": "关注领域",
-  "website": "官网",
-  "contact": "联系方式",
-  "services": ["服务1", "服务2"],
-  "source": "数据来源"
-}
-```
-
-## 🤝 贡献数据
-
-### 方式一：提交 Issue
-
-1. 进入 [Issues](https://github.com/AIPMAndy/FreeFound/issues)
-2. 点击 "New Issue"
-3. 选择 "数据补充" 模板
-4. 填写活动或孵化器信息
-
-### 方式二：提交 Pull Request
-
-1. Fork 本项目
-2. 编辑 `data/hackathons.json` 或 `data/incubators.json`
-3. 提交 Pull Request
-
-**数据质量要求**：
-- ✅ 信息准确、来源可靠
-- ✅ 包含必要字段（名称、链接、时间/地点）
-- ✅ 注明数据来源
-- ❌ 不要添加过期活动（超过3个月）
-- ❌ 不要添加虚假或广告信息
-
-### 方式三：添加新数据源
-
-如果你发现了好的数据源，欢迎：
-1. 在 `collector.py` 中添加新的收集器
-2. 提交 Pull Request
-3. 在 PR 描述中说明数据源和收集逻辑
-
-## 🔍 搜索和筛选
-
-### 网页版搜索
-
-访问网页版，使用搜索框：
-- 按活动名称搜索
-- 按城市筛选
-- 按主办方查找
-
-### 命令行筛选
-
-```bash
-# 筛选北京的黑客松
-cat data/hackathons.json | jq '.[] | select(.location | contains("北京"))'
-
-# 筛选2026年的活动
-cat data/hackathons.json | jq '.[] | select(.time | contains("2026"))'
-
-# 筛选特定类型的孵化器
-cat data/incubators.json | jq '.[] | select(.type == "综合孵化器")'
-```
-
-## 📱 订阅更新
-
-### GitHub Watch
-
-1. 点击仓库右上角的 "Watch"
-2. 选择 "Custom" → "Releases"
-3. 每次数据更新会收到通知
-
-### RSS 订阅
-
-订阅 GitHub Commits RSS：
-```
-https://github.com/AIPMAndy/FreeFound/commits/main.atom
-```
-
-## 🐛 问题反馈
-
-遇到问题？
-1. 查看 [FAQ](https://github.com/AIPMAndy/FreeFound/wiki/FAQ)
-2. 搜索 [已有 Issues](https://github.com/AIPMAndy/FreeFound/issues)
-3. 提交新的 Issue
-
-## 📄 License
-
-MIT License - 自由使用、修改和分发
+联系作者：[metaver.vip](https://metaver.vip/) · 微信 `AIPMAndy`。

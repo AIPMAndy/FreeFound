@@ -1,192 +1,31 @@
-# FreeFound 项目总结
+# FreeFound 项目现状与变更摘要
 
-## 🎉 项目完成情况
+版本方向：可信的创业资源入口 + 30 天验证行动指南（2026-10-22）。
 
-### ✅ 已完成功能
+## 当前已实现
 
-#### 1. 数据收集 (data/)
-- ✅ 黑客松数据：9条高质量数据
-  - 来源：活动行
-  - 包含：标题、时间、地点、主办方、链接
-- ✅ 孵化器数据：10家北京孵化器
-  - 包含：名称、地址、类型、服务、官网
+- GitHub Pages 单页网站：苹果风、响应式、资源分类、搜索和筛选。
+- 静态 JSON：7 个精选资源入口、4 条黑客松历史记录、31 条待核验孵化机构线索。
+- 历史记录根据结束日期动态显示状态；不展示未经核实的“报名中”。
+- 30 天行动方案：用户访谈 → 找开发者 → Demo → 实际试用。
+- 安全渲染：使用 DOM textContent 代替字符串注入 HTML；外链添加 noreferrer/noopener。
+- 本地 REST API：黑客松、孵化器、资源和统计；并非线上托管 API。
+- GitHub Actions 持续集成：验证数据完整性和基础单元测试；**不负责实时抓取。**
+- 作者入口：metaver.vip 与微信 AIPMAndy。
 
-#### 2. 自动化收集器 (collector.py)
-- ✅ 多数据源支持
-  - 活动行（已实现）
-  - 思否（框架已搭建）
-  - 掘金（框架已搭建）
-- ✅ 数据清洗和去重
-- ✅ 可扩展架构
-- ✅ 错误处理和日志
+## P0 修复记录
 
-#### 3. Web 展示界面 (index.html)
-- ✅ 响应式设计
-- ✅ 渐变背景和现代化 UI
-- ✅ 实时搜索功能
-- ✅ 标签页切换（黑客松/孵化器）
-- ✅ 统计数据展示
-- ✅ 移动端适配
+原始 50 条黑客松中，46 条使用 example.com 占位网址，现已移除。原 collector.py 有覆盖现有数据的风险，已改成只读安全审计入口。旧“每天自动更新”的说明不真实，已删除。
 
-#### 4. REST API 服务 (api_server.py)
-- ✅ `/api/hackathons` - 黑客松列表
-- ✅ `/api/incubators` - 孵化器列表
-- ✅ `/api/stats` - 统计信息
-- ✅ 筛选功能（地点、来源、类型）
-- ✅ CORS 支持
-- ✅ 错误处理
+## 尚未解决
 
-#### 5. 自动化部署 (.github/workflows/)
-- ✅ GitHub Actions 配置
-- ✅ 每日自动更新
-- ✅ 自动提交和推送
+- 31 条机构线索需要逐项核验名称、官网、运营状态及申请渠道。
+- 4 条历史活动的来源链接还需要人工点击复核。
+- 尚无带有复核时间戳的**可报名**黑客松目录。
+- 没有经过线上真实浏览器截图测试或可访问性自动化测试。
+- 未建立可审计的自动采集、失效链接检测、人工审批和下线流程。
+- GitHub Pages 需要确认最新 commit 对应的部署结果。
 
-#### 6. 项目文档
-- ✅ README.md - 项目说明
-- ✅ USAGE.md - 使用指南
-- ✅ CONTRIBUTING.md - 贡献指南
-- ✅ LICENSE - MIT 开源协议
+详细见 [AUDIT.md](AUDIT.md)，贡献标准见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-### 📊 项目统计
-
-```
-项目文件：
-- Python 脚本：2个（collector.py, api_server.py）
-- HTML 页面：1个（index.html）
-- 数据文件：2个（hackathons.json, incubators.json）
-- 文档文件：4个（README, USAGE, CONTRIBUTING, LICENSE）
-- 配置文件：2个（.gitignore, update-data.yml）
-
-代码量：
-- Python: ~400行
-- HTML/CSS/JS: ~500行
-- 文档: ~800行
-- 总计: ~1700行
-
-数据量：
-- 黑客松: 9条
-- 孵化器: 10条
-```
-
-## 🚀 使用方式
-
-### 方式一：在线访问
-```
-网页版: https://aipmAndy.github.io/FreeFound/
-数据API: https://raw.githubusercontent.com/AIPMAndy/FreeFound/main/data/
-```
-
-### 方式二：本地运行
-```bash
-# 克隆项目
-git clone https://github.com/AIPMAndy/FreeFound.git
-cd FreeFound
-
-# 查看数据
-cat data/hackathons.json
-cat data/incubators.json
-
-# 启动 Web 界面
-python -m http.server 8000
-# 访问 http://localhost:8000
-
-# 启动 API 服务
-python api_server.py 8080
-# 访问 http://localhost:8080
-
-# 运行数据收集器
-pip install requests beautifulsoup4
-python collector.py
-```
-
-## 🔮 下一步计划
-
-### 短期（1-2周）
-- [ ] 修复 git push 网络问题
-- [ ] 启用 GitHub Pages
-- [ ] 添加更多数据源（掘金、CSDN）
-- [ ] 扩展到更多城市的孵化器
-
-### 中期（1个月）
-- [ ] 实现邮件订阅功能
-- [ ] 添加数据可视化图表
-- [ ] 开发移动端 App
-- [ ] 社区论坛功能
-
-### 长期（3个月+）
-- [ ] AI Agent 自动参与黑客松
-- [ ] 智能推荐系统
-- [ ] 孵化器申请指南
-- [ ] 创业资源对接平台
-
-## 💡 技术亮点
-
-1. **模块化设计**
-   - 数据收集、展示、API 完全解耦
-   - 易于扩展和维护
-
-2. **自动化运维**
-   - GitHub Actions 自动更新
-   - 无需人工干预
-
-3. **开放数据**
-   - JSON 格式，易于使用
-   - REST API 接口
-   - 完全开源
-
-4. **用户友好**
-   - 美观的 Web 界面
-   - 实时搜索功能
-   - 详细的文档
-
-## 🐛 已知问题
-
-1. **网络问题**
-   - git push 超时（可能是网络波动）
-   - 解决方案：稍后重试或使用 GitHub Desktop
-
-2. **数据源限制**
-   - 部分网站有反爬虫机制
-   - 解决方案：添加延时、使用代理
-
-3. **数据完整性**
-   - 部分活动缺少详细信息
-   - 解决方案：人工补充、多源验证
-
-## 📝 待办事项
-
-### 紧急
-- [ ] 推送代码到 GitHub（网络问题）
-- [ ] 启用 GitHub Pages
-
-### 重要
-- [ ] 测试 GitHub Actions 工作流
-- [ ] 添加更多黑客松数据
-- [ ] 扩展孵化器覆盖范围
-
-### 一般
-- [ ] 优化 Web 界面性能
-- [ ] 添加数据导出功能
-- [ ] 编写单元测试
-
-## 🎯 项目目标达成度
-
-- ✅ 数据收集：100%
-- ✅ 自动化：100%
-- ✅ Web 界面：100%
-- ✅ API 服务：100%
-- ✅ 文档完善：100%
-- ⏳ 部署上线：80%（待 push 成功）
-
-**总体完成度：95%**
-
-## 📞 联系方式
-
-- GitHub: https://github.com/AIPMAndy/FreeFound
-- Issues: https://github.com/AIPMAndy/FreeFound/issues
-
----
-
-**项目创建时间**: 2026-05-06
-**当前版本**: v1.0.0
-**状态**: 开发完成，待部署
+**发布原则：宁可少收录，不允许用演示数据冒充真实资源。**
